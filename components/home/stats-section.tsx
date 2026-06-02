@@ -5,15 +5,15 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 
 export function StatsSection() {
   return (
-    <section className="border-y border-border bg-card py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <StaggerContainer className="grid grid-cols-2 gap-8 md:grid-cols-4">
+    <section className="border-y border-border bg-card py-10 sm:py-12 md:py-16">
+      <div className="container-page">
+        <StaggerContainer className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
           {companyStats.map((stat, index) => (
             <StaggerItem key={index} className="text-center">
-              <p className="font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <p className="font-serif text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
                 {stat.value}
               </p>
-              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+              <p className="mt-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{stat.label}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>

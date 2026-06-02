@@ -23,9 +23,9 @@ export default function ContactPage() {
       />
 
       {/* Contact Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="section-padding">
+        <div className="container-page">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Contact Info */}
             <div>
               <FadeIn>
@@ -34,7 +34,7 @@ export default function ContactPage() {
                 </span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+                <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                   <span className="text-balance">
                     Let&apos;s Start a Conversation
                   </span>
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground">
                   Send Us a Message
                 </h3>
@@ -124,11 +124,11 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground lg:text-3xl">
+              <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
                 Visit Our Office
               </h2>
               <p className="mt-4 text-muted-foreground">
@@ -138,7 +138,7 @@ export default function ContactPage() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mt-12 h-96 overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="mt-8 h-64 overflow-hidden rounded-2xl border border-border bg-card sm:mt-10 sm:h-80 md:mt-12 md:h-96">
               <div className="flex h-full items-center justify-center">
                 <div className="text-center">
                   <MapPin className="mx-auto h-16 w-16 text-muted-foreground/30" />

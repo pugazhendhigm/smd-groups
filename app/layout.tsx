@@ -80,7 +80,7 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen w-full overflow-x-hidden">{children}</main>
         <Footer />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>

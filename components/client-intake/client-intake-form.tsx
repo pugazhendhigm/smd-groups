@@ -152,7 +152,7 @@ export function ClientIntakeForm() {
 
   if (isSubmitted) {
     return (
-      <div className="rounded-2xl border border-border bg-card p-12 text-center">
+      <div className="rounded-2xl border border-border bg-card p-6 text-center sm:p-8 md:p-12">
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-accent/10">
           <CheckCircle2 className="h-10 w-10 text-accent" />
         </div>
@@ -178,18 +178,36 @@ export function ClientIntakeForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-card">
-      {/* Progress Steps */}
-      <div className="border-b border-border p-6">
-        <div className="flex items-center justify-between overflow-x-auto">
-          {steps.map((step, index) => (
+    <div className="overflow-hidden rounded-2xl border border-border bg-card">
+      {/* Progress Steps - Mobile */}
+      <div className="border-b border-border p-4 sm:p-5 md:hidden">
+        <div className="flex items-center justify-between gap-3 text-sm">
+          <span className="font-medium text-foreground">
+            Step {currentStep} of {steps.length}
+          </span>
+          <span className="truncate text-muted-foreground">
+            {steps[currentStep - 1]?.title}
+          </span>
+        </div>
+        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-secondary">
+          <div
+            className="h-full rounded-full bg-primary transition-all duration-300"
+            style={{ width: `${(currentStep / steps.length) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Progress Steps - Tablet & Desktop */}
+      <div className="hidden border-b border-border p-4 md:block lg:p-6">
+        <div className="-mx-1 flex items-start justify-between gap-1 overflow-x-auto pb-1 lg:gap-2">
+          {steps.map((step) => (
             <div
               key={step.id}
-              className="flex flex-col items-center"
+              className="flex min-w-[4.5rem] shrink-0 flex-col items-center px-1 lg:min-w-0 lg:flex-1"
             >
               <div
                 className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+                  "flex h-9 w-9 items-center justify-center rounded-full transition-colors lg:h-10 lg:w-10",
                   currentStep === step.id
                     ? "bg-primary text-primary-foreground"
                     : currentStep > step.id
@@ -198,14 +216,14 @@ export function ClientIntakeForm() {
                 )}
               >
                 {currentStep > step.id ? (
-                  <CheckCircle2 className="h-5 w-5" />
+                  <CheckCircle2 className="h-4 w-4 lg:h-5 lg:w-5" />
                 ) : (
-                  <step.icon className="h-5 w-5" />
+                  <step.icon className="h-4 w-4 lg:h-5 lg:w-5" />
                 )}
               </div>
               <span
                 className={cn(
-                  "mt-2 text-xs font-medium",
+                  "mt-2 hidden text-center text-xs font-medium leading-tight lg:block",
                   currentStep === step.id
                     ? "text-foreground"
                     : "text-muted-foreground"
@@ -213,16 +231,16 @@ export function ClientIntakeForm() {
               >
                 {step.title}
               </span>
-              {index < steps.length - 1 && (
-                <div className="absolute left-1/2 w-full h-px bg-border -z-10" />
-              )}
             </div>
           ))}
         </div>
+        <p className="mt-3 text-center text-sm font-medium text-foreground lg:hidden">
+          {steps[currentStep - 1]?.title}
+        </p>
       </div>
 
       {/* Form Content */}
-      <div className="p-8">
+      <div className="p-4 sm:p-6 md:p-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
@@ -266,24 +284,26 @@ export function ClientIntakeForm() {
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between border-t border-border p-6">
+      <div className="flex flex-col-reverse gap-3 border-t border-border p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
         <Button
           variant="outline"
           onClick={() => setCurrentStep((prev) => prev - 1)}
           disabled={currentStep === 1}
+          className="w-full sm:w-auto"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Previous
         </Button>
 
         {currentStep === steps.length ? (
-          <Button onClick={handleSubmit} disabled={isSubmitting}>
+          <Button onClick={handleSubmit} disabled={isSubmitting} className="w-full sm:w-auto">
             {isSubmitting ? "Submitting..." : "Submit Application"}
           </Button>
         ) : (
           <Button
             onClick={() => setCurrentStep((prev) => prev + 1)}
             disabled={!canProceed()}
+            className="w-full sm:w-auto"
           >
             Next
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -380,7 +400,7 @@ function StepPersonalInfo({
         />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
         <div>
           <label className="block text-sm font-medium text-foreground">City</label>
           <input
@@ -893,7 +913,7 @@ function StepDocuments({
         </p>
       </div>
 
-      <div className="rounded-xl border-2 border-dashed border-border p-8 text-center">
+      <div className="rounded-xl border-2 border-dashed border-border p-5 text-center sm:p-8">
         <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
         <p className="mt-4 text-sm text-muted-foreground">
           Drag and drop files here, or click to browse

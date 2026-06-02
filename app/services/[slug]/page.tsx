@@ -57,9 +57,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
 
       {/* Service Overview */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="section-padding">
+        <div className="container-page">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <FadeIn>
                 <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="mt-4 font-serif text-3xl font-bold text-foreground">
+                <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl">
                   <span className="text-balance">
                     What We Offer
                   </span>
@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             {/* Features List */}
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground">
                   Key Features
                 </h3>
@@ -109,8 +109,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Benefits */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -118,7 +118,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   Why Choose This Service
                 </span>
@@ -126,10 +126,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-3">
             {service.benefits.map((benefit, index) => (
               <StaggerItem key={index}>
-                <div className="flex items-start gap-4 rounded-xl border border-border bg-card p-6">
+                <div className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 sm:gap-4 sm:p-6">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
                     <span className="text-sm font-bold text-accent">{index + 1}</span>
                   </div>
@@ -142,8 +142,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Process */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-page">
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -151,7 +151,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   How We Work With You
                 </span>
@@ -159,8 +159,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </FadeIn>
           </div>
 
-          <div className="mt-12">
-            <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 sm:mt-10 md:mt-12">
+            <StaggerContainer className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
               {service.process.map((step, index) => (
                 <StaggerItem key={index}>
                   <div className="relative">
@@ -169,7 +169,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                       <div className="absolute left-8 top-10 hidden h-[calc(100%+2rem)] w-px bg-border lg:block" />
                     )}
                     
-                    <div className="relative rounded-xl border border-border bg-card p-6">
+                    <div className="relative rounded-xl border border-border bg-card p-5 sm:p-6">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
                         {step.step}
                       </div>
@@ -189,8 +189,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -198,7 +198,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   Frequently Asked Questions
                 </span>
@@ -207,7 +207,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </div>
 
           <FadeIn delay={0.2}>
-            <div className="mx-auto mt-12 max-w-3xl">
+            <div className="mx-auto mt-8 max-w-3xl sm:mt-10 md:mt-12">
               <ServiceFAQ faqs={service.faqs} />
             </div>
           </FadeIn>
@@ -215,19 +215,19 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-page">
           <FadeIn>
-            <div className="rounded-2xl bg-primary p-8 text-center lg:p-12">
-              <h2 className="font-serif text-2xl font-bold text-primary-foreground lg:text-3xl">
+            <div className="rounded-2xl bg-primary p-6 text-center sm:p-8 lg:p-12">
+              <h2 className="font-serif text-xl font-bold text-primary-foreground sm:text-2xl lg:text-3xl">
                 <span className="text-balance">Ready to Get Started?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
                 Schedule a consultation to discuss how our {service.title.toLowerCase()} can
                 help you achieve your goals.
               </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button asChild size="lg" variant="secondary">
+              <div className="mt-6 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
+                <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
                   <Link href="/client-intake">
                     Schedule Consultation
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -237,7 +237,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+                  className="w-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
                 >
                   <Link href="/contact">Contact Us</Link>
                 </Button>

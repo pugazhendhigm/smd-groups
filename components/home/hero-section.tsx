@@ -9,25 +9,25 @@ import cpaImage from "@/assets/cpaimg.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20">
+    <section className="relative overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-14 md:pt-32 md:pb-16 lg:pb-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 via-background to-background" />
       
       {/* Decorative Elements */}
-      <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-16 top-1/4 h-64 w-64 rounded-full bg-accent/5 blur-3xl sm:h-96 sm:w-96 sm:right-0" />
+      <div className="pointer-events-none absolute -left-16 bottom-1/4 h-48 w-48 rounded-full bg-primary/5 blur-3xl sm:h-64 sm:w-64 sm:left-0" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container-page relative">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn>
-            <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-medium text-muted-foreground">
+            <span className="inline-flex max-w-full items-center gap-2 rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-muted-foreground sm:px-4 sm:py-2 sm:text-sm">
               <span className="h-2 w-2 rounded-full bg-accent" />
               Trusted Financial Advisory Since 1998
             </span>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="mt-8 font-serif text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-serif text-3xl font-bold leading-tight tracking-tight text-foreground sm:mt-8 sm:text-4xl md:text-5xl lg:text-6xl">
               <span className="text-balance">
                 Expert Financial Guidance for Your Success
               </span>
@@ -35,7 +35,7 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
               We provide comprehensive tax advisory, accounting, and business
               development solutions to help individuals and businesses achieve their
               financial goals with confidence and clarity.
@@ -43,14 +43,14 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="min-w-[180px]">
+            <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
+              <Button asChild size="lg" className="w-full sm:min-w-[180px] sm:w-auto">
                 <Link href="/client-intake">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="min-w-[180px]">
+              <Button asChild variant="outline" size="lg" className="w-full sm:min-w-[180px] sm:w-auto">
                 <Link href="/services">Explore Services</Link>
               </Button>
             </div>
@@ -59,7 +59,7 @@ export function HeroSection() {
 
         {/* Hero Image/Visual */}
         <FadeIn delay={0.4}>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center sm:mt-8">
             <div className="relative w-full max-w-4xl">
               <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl">
                 <Image

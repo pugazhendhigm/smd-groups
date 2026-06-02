@@ -26,9 +26,9 @@ export function ServiceFAQ({ faqs }: ServiceFAQProps) {
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="flex w-full items-center justify-between p-6 text-left"
+            className="flex w-full items-center justify-between gap-4 p-4 text-left sm:p-6"
           >
-            <span className="font-medium text-foreground">{faq.question}</span>
+            <span className="pr-2 font-medium text-foreground">{faq.question}</span>
             <ChevronDown
               className={cn(
                 "h-5 w-5 shrink-0 text-muted-foreground transition-transform",

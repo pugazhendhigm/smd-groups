@@ -93,10 +93,10 @@ export default function PrivacyPolicyPage() {
         ]}
       />
 
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-narrow">
           <FadeIn>
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm lg:p-10">
+            <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8 lg:p-10">
               <div className="flex flex-col gap-2 border-b border-border pb-6">
                 <p className="text-sm font-medium text-muted-foreground">
                   Effective Date: 01/01/2026
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
               <div className="mt-8 space-y-8">
                 {policySections.map((section) => (
                   <div key={section.title}>
-                    <h2 className="font-serif text-2xl font-semibold text-foreground">
+                    <h2 className="font-serif text-xl font-semibold text-foreground sm:text-2xl">
                       {section.title}
                     </h2>
                     <div className="mt-4 space-y-3">

@@ -35,8 +35,8 @@ export default function OurTeamPage() {
       />
 
       {/* Leadership Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-page">
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -44,7 +44,7 @@ export default function OurTeamPage() {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   Meet Our Three Core Team Members
                 </span>
@@ -58,11 +58,11 @@ export default function OurTeamPage() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="mt-16 space-y-8">
+          <StaggerContainer className="mt-10 space-y-6 sm:mt-12 md:mt-16 md:space-y-8">
             {teamMembers.map((member) => (
               <StaggerItem key={member.id}>
-                <div className="group overflow-hidden rounded-2xl border border-border bg-card md:grid md:grid-cols-[220px_1fr] md:items-stretch">
-                  <div className="relative h-56 overflow-hidden bg-secondary md:h-full md:min-h-[220px]">
+                <div className="group overflow-hidden rounded-2xl border border-border bg-card md:grid md:grid-cols-[200px_1fr] md:items-stretch lg:grid-cols-[220px_1fr]">
+                  <div className="relative h-52 overflow-hidden bg-secondary sm:h-56 md:h-full md:min-h-[220px]">
                     <Image
                       src={teamImages[member.image as keyof typeof teamImages]}
                       alt={member.name}
@@ -72,7 +72,7 @@ export default function OurTeamPage() {
                     />
                   </div>
 
-                  <div className="p-6 lg:p-8">
+                  <div className="p-5 sm:p-6 lg:p-8">
                     <h3 className="font-serif text-xl font-semibold text-foreground">
                       {member.name}
                     </h3>
@@ -109,9 +109,9 @@ export default function OurTeamPage() {
       </section>
 
       {/* Join Our Team */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
+          <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <FadeIn>
                 <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -119,7 +119,7 @@ export default function OurTeamPage() {
                 </span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+                <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                   <span className="text-balance">
                     Join Our Growing Team
                   </span>
@@ -144,7 +144,7 @@ export default function OurTeamPage() {
             </div>
 
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground">
                   What We Offer
                 </h3>
@@ -171,11 +171,11 @@ export default function OurTeamPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-page">
           <FadeIn>
-            <div className="rounded-2xl bg-primary p-8 text-center lg:p-12">
-              <h2 className="font-serif text-2xl font-bold text-primary-foreground lg:text-3xl">
+            <div className="rounded-2xl bg-primary p-6 text-center sm:p-8 lg:p-12">
+              <h2 className="font-serif text-xl font-bold text-primary-foreground sm:text-2xl lg:text-3xl">
                 <span className="text-balance">Ready to Work With Us?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">

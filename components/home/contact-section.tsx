@@ -6,9 +6,9 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function ContactSection() {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="section-padding">
+      <div className="container-page">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Contact Info */}
           <div>
             <FadeIn>
@@ -17,7 +17,7 @@ export function ContactSection() {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   Let&apos;s Start a Conversation
                 </span>
@@ -91,7 +91,7 @@ export function ContactSection() {
 
           {/* Map Placeholder */}
           <FadeIn delay={0.2} direction="left">
-            <div className="h-full min-h-[400px] overflow-hidden rounded-2xl border border-border bg-secondary">
+            <div className="h-full min-h-[280px] overflow-hidden rounded-2xl border border-border bg-secondary sm:min-h-[320px] md:min-h-[400px]">
               <div className="flex h-full items-center justify-center">
                 <div className="text-center">
                   <MapPin className="mx-auto h-12 w-12 text-muted-foreground/50" />

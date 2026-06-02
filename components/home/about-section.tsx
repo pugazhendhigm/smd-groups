@@ -7,9 +7,9 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function AboutSection() {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="section-padding">
+      <div className="container-page">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
             <FadeIn>
@@ -18,7 +18,7 @@ export function AboutSection() {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+              <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
                   Your Trusted Partner in Financial Excellence
                 </span>
@@ -52,7 +52,7 @@ export function AboutSection() {
           {/* Vision & Mission Cards */}
           <div className="space-y-6">
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                     <Eye className="h-6 w-6 text-accent" />
@@ -70,7 +70,7 @@ export function AboutSection() {
             </FadeIn>
 
             <FadeIn delay={0.3} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                     <Target className="h-6 w-6 text-primary" />

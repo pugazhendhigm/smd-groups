@@ -48,11 +48,11 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="flex h-20 items-center justify-between">
+      <div className="container-page">
+        <nav className="flex h-16 items-center justify-between gap-3 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+          <Link href="/" className="flex min-w-0 shrink items-center gap-2 sm:gap-2.5">
+            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg sm:h-10 sm:w-10">
               <Image
                 src={appLogo}
                 alt="SMD Group logo"
@@ -61,8 +61,10 @@ export function Header() {
                 sizes="40px"
               />
             </div>
-            <span className="font-serif text-xl font-semibold text-foreground">
-              SMD Financial Group LLC
+            <span className="min-w-0 font-serif text-sm font-semibold leading-tight text-foreground sm:text-base md:text-lg lg:text-xl">
+              <span className="sm:hidden">SMD Group</span>
+              <span className="hidden sm:inline md:hidden">SMD Financial Group</span>
+              <span className="hidden md:inline">SMD Financial Group LLC</span>
             </span>
           </Link>
 
@@ -180,7 +182,7 @@ export function Header() {
             transition={{ duration: 0.3 }}
             className="overflow-hidden border-t border-border bg-card lg:hidden"
           >
-            <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+            <div className="container-page py-4 sm:py-5">
               {navigationItems.map((item) => (
                 <div key={item.title} className="border-b border-border py-2 last:border-0">
                   {item.children ? (

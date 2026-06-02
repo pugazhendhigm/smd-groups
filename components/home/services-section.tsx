@@ -16,8 +16,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function ServicesSection() {
   return (
-    <section className="bg-secondary/50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-secondary/50">
+      <div className="container-page">
         <div className="text-center">
           <FadeIn>
             <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -25,7 +25,7 @@ export function ServicesSection() {
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+            <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 Comprehensive Financial Solutions
               </span>
@@ -39,14 +39,14 @@ export function ServicesSection() {
           </FadeIn>
         </div>
 
-        <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 md:mt-16 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = iconMap[service.icon] || Calculator;
             return (
               <StaggerItem key={service.id}>
                 <Link
                   href={`/services/${service.id}`}
-                  className="group block h-full rounded-2xl border border-border bg-card p-8 shadow-sm transition-all hover:border-accent/50 hover:shadow-md"
+                  className="group block h-full rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:border-accent/50 hover:shadow-md sm:p-6 md:p-8"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 transition-colors group-hover:bg-accent/20">
                     <Icon className="h-6 w-6 text-accent" />

@@ -38,8 +38,8 @@ const reasons = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="section-padding">
+      <div className="container-page">
         <div className="text-center">
           <FadeIn>
             <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -47,7 +47,7 @@ export function WhyChooseUsSection() {
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+            <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 The SMD Group Difference
               </span>
@@ -61,7 +61,7 @@ export function WhyChooseUsSection() {
           </FadeIn>
         </div>
 
-        <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:mt-16 lg:grid-cols-3">
           {reasons.map((reason, index) => (
             <StaggerItem key={index}>
               <div className="flex gap-4">

@@ -60,10 +60,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-secondary/50 pt-32 pb-16">
+      <section className="relative bg-secondary/50 pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pb-16">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
         
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="container-narrow relative">
           <FadeIn>
             <Link
               href="/blog"
@@ -87,21 +87,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+            <h1 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
               <span className="text-balance">{post.title}</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="mt-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-card text-lg font-bold text-muted-foreground">
-                {post.author.split(" ").map((n) => n[0]).join("")}
+            <div className="mt-5 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-center sm:gap-4">
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-card text-base font-bold text-muted-foreground sm:h-12 sm:w-12 sm:text-lg">
+                  {post.author.split(" ").map((n) => n[0]).join("")}
+                </div>
+                <div className="min-w-0">
+                  <p className="font-medium text-foreground">{post.author}</p>
+                  <p className="text-sm text-muted-foreground">{post.authorRole}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-medium text-foreground">{post.author}</p>
-                <p className="text-sm text-muted-foreground">{post.authorRole}</p>
-              </div>
-              <span className="ml-auto flex items-center gap-1 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1 text-sm text-muted-foreground sm:ml-auto">
                 <Calendar className="h-4 w-4" />
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -115,13 +117,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* Content */}
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1fr_200px]">
+      <section className="section-padding-sm">
+        <div className="container-narrow">
+          <div className="grid gap-8 lg:grid-cols-[1fr_200px] lg:gap-12">
             {/* Article */}
             <FadeIn>
               <article
-                className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-accent prose-strong:text-foreground"
+                className="prose prose-sm max-w-none sm:prose-base lg:prose-lg prose-headings:font-serif prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-accent prose-strong:text-foreground"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </FadeIn>
@@ -157,11 +159,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* Author Bio */}
-      <section className="border-y border-border bg-card py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-border bg-card py-8 sm:py-10 md:py-12">
+        <div className="container-narrow">
           <FadeIn>
-            <div className="flex gap-6">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-secondary text-xl font-bold text-muted-foreground">
+            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary text-lg font-bold text-muted-foreground sm:h-16 sm:w-16 sm:text-xl">
                 {post.author.split(" ").map((n) => n[0]).join("")}
               </div>
               <div>
@@ -181,8 +183,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* Navigation */}
-      <section className="py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding-sm">
+        <div className="container-narrow">
           <div className="grid gap-4 sm:grid-cols-2">
             {prevPost && (
               <FadeIn>
@@ -222,8 +224,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="bg-secondary/50 py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="section-padding bg-secondary/50">
+          <div className="container-page">
             <FadeIn>
               <h2 className="font-serif text-2xl font-bold text-foreground">
                 Related Articles

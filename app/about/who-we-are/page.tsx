@@ -25,9 +25,9 @@ export default function WhoWeArePage() {
       />
 
       {/* Story Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="section-padding">
+        <div className="container-page">
+          <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <FadeIn>
                 <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -35,7 +35,7 @@ export default function WhoWeArePage() {
                 </span>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
+                <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                   <span className="text-balance">
                     Building Financial Success, One Client at a Time
                   </span>
@@ -72,7 +72,7 @@ export default function WhoWeArePage() {
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-secondary">
                     <div className="text-center p-8">
-                      <p className="font-serif text-6xl font-bold text-foreground">25+</p>
+                      <p className="font-serif text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">25+</p>
                       <p className="mt-2 text-muted-foreground">Years of Excellence</p>
                     </div>
                   </div>
@@ -84,15 +84,15 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-border bg-card py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <StaggerContainer className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <section className="border-y border-border bg-card py-10 sm:py-12 md:py-16">
+        <div className="container-page">
+          <StaggerContainer className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
             {companyStats.map((stat, index) => (
               <StaggerItem key={index} className="text-center">
-                <p className="font-serif text-3xl font-bold text-foreground lg:text-4xl">
+                <p className="font-serif text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+                <p className="mt-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{stat.label}</p>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -100,11 +100,11 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2">
+      <section className="section-padding">
+        <div className="container-page">
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             <FadeIn>
-              <div className="rounded-2xl border border-border bg-card p-8 lg:p-10">
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8 lg:p-10">
                 <div className="flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10">
                     <Eye className="h-7 w-7 text-accent" />
@@ -124,7 +124,7 @@ export default function WhoWeArePage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="rounded-2xl border border-border bg-card p-8 lg:p-10">
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8 lg:p-10">
                 <div className="flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
                     <Target className="h-7 w-7 text-primary" />
@@ -146,8 +146,8 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Values */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
@@ -163,7 +163,7 @@ export default function WhoWeArePage() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerContainer className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-4">
             {companyValues.map((value, index) => (
               <StaggerItem key={index}>
                 <div className="h-full rounded-2xl border border-border bg-card p-6">
@@ -182,11 +182,11 @@ export default function WhoWeArePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-page">
           <FadeIn>
-            <div className="rounded-2xl bg-primary p-8 text-center lg:p-12">
-              <h2 className="font-serif text-2xl font-bold text-primary-foreground lg:text-3xl">
+            <div className="rounded-2xl bg-primary p-6 text-center sm:p-8 lg:p-12">
+              <h2 className="font-serif text-xl font-bold text-primary-foreground sm:text-2xl lg:text-3xl">
                 <span className="text-balance">Ready to Meet Our Team?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">

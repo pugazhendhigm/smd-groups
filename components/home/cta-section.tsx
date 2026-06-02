@@ -7,11 +7,11 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function CTASection() {
   return (
-    <section className="bg-primary py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-primary">
+      <div className="container-page">
         <div className="text-center">
           <FadeIn>
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground lg:text-4xl">
+            <h2 className="font-serif text-2xl font-bold text-primary-foreground sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 Ready to Take Control of Your Finances?
               </span>
@@ -24,12 +24,12 @@ export function CTASection() {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
               <Button
                 asChild
                 size="lg"
                 variant="secondary"
-                className="min-w-[180px]"
+                className="w-full sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/client-intake">
                   Start Your Journey
@@ -40,7 +40,7 @@ export function CTASection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="min-w-[180px] border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+                className="w-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>

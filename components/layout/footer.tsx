@@ -7,8 +7,8 @@ import appLogo from "@/assets/appimg.png";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container-page py-12 sm:py-14 md:py-16 lg:py-16">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-center sm:mt-12 md:flex-row md:text-left">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} SMD Group. All rights reserved.
           </p>

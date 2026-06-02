@@ -26,16 +26,16 @@ export default function BlogPage() {
       />
 
       {/* Search and Filter */}
-      <section className="border-b border-border py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="border-b border-border py-6 sm:py-8">
+        <div className="container-page">
           <BlogSearch categories={categories} />
         </div>
       </section>
 
       {/* Blog Grid */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <section className="section-padding">
+        <div className="container-page">
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
             {blogPosts.map((post) => (
               <StaggerItem key={post.id}>
                 <Link
@@ -53,7 +53,7 @@ export default function BlogPage() {
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-2 gap-y-2 text-sm text-muted-foreground sm:gap-4">
                       <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                         {post.category}
                       </span>
@@ -71,12 +71,12 @@ export default function BlogPage() {
                       {post.excerpt}
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                      <div className="flex items-center gap-2">
+                    <div className="mt-6 flex flex-col gap-3 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="flex min-w-0 items-center gap-2">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-bold text-muted-foreground">
                           {post.author.split(" ").map((n) => n[0]).join("")}
                         </div>
-                        <span className="text-sm text-muted-foreground">
+                        <span className="truncate text-sm text-muted-foreground">
                           {post.author}
                         </span>
                       </div>
@@ -117,11 +117,11 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-secondary/50">
+        <div className="container-page">
           <FadeIn>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground lg:text-3xl">
+              <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
                 <span className="text-balance">
                   Stay Updated with Our Latest Insights
                 </span>
@@ -130,15 +130,15 @@ export default function BlogPage() {
                 Subscribe to our newsletter for the latest articles on tax planning,
                 accounting best practices, and business strategies.
               </p>
-              <form className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <form className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="rounded-lg border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:w-80"
+                  className="w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:max-w-sm md:w-80"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
                 >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4" />

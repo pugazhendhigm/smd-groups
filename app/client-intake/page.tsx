@@ -19,8 +19,8 @@ export default function ClientIntakePage() {
         ]}
       />
 
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="section-padding">
+        <div className="container-narrow">
           <ClientIntakeForm />
         </div>
       </section>

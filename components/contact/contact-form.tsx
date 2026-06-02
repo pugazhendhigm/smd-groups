@@ -38,7 +38,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="mt-8 flex flex-col items-center justify-center py-12 text-center">
+      <div className="mt-6 flex flex-col items-center justify-center py-8 text-center sm:mt-8 sm:py-12">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
           <CheckCircle2 className="h-8 w-8 text-accent" />
         </div>
