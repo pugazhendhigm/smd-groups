@@ -1,15 +1,25 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Linkedin, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { teamMembers } from "@/lib/data";
 import { PageHeader } from "@/components/shared/page-header";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
+import subhashiniImage from "@/assets/subhashini.webp";
+import kalyanasundaramImage from "@/assets/kalyanasundaram.webp";
+import vaidyanathanImage from "@/assets/Vaidyanathan.webp";
 
 export const metadata: Metadata = {
   title: "Our Team",
-  description: "Meet the experienced professionals at SMD Group who are dedicated to your financial success.",
+  description: "Meet the professionals at SMD Group who are dedicated to your financial success.",
 };
+
+const teamImages = {
+  subhashini: subhashiniImage,
+  kalyanasundaram: kalyanasundaramImage,
+  vaidyanathan: vaidyanathanImage,
+} as const;
 
 export default function OurTeamPage() {
   return (
@@ -30,66 +40,66 @@ export default function OurTeamPage() {
           <div className="text-center">
             <FadeIn>
               <span className="text-sm font-medium uppercase tracking-wider text-accent">
-                Leadership
+                Team
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="mt-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
                 <span className="text-balance">
-                  Experienced Professionals at Your Service
+                  Meet Our Three Core Team Members
                 </span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-                Our team brings together decades of combined experience in tax,
-                accounting, and business advisory services.
+                Our team brings together deep expertise in taxation, audit,
+                finance, business advisory, and banking.
               </p>
             </FadeIn>
           </div>
 
-          <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-16 space-y-8">
             {teamMembers.map((member) => (
               <StaggerItem key={member.id}>
-                <div className="group overflow-hidden rounded-2xl border border-border bg-card">
-                  {/* Photo Placeholder */}
-                  <div className="aspect-[4/3] bg-secondary">
-                    <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-secondary">
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card text-4xl font-serif font-bold text-muted-foreground">
-                        {member.name.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                    </div>
+                <div className="group overflow-hidden rounded-2xl border border-border bg-card md:grid md:grid-cols-[220px_1fr] md:items-stretch">
+                  <div className="relative h-56 overflow-hidden bg-secondary md:h-full md:min-h-[220px]">
+                    <Image
+                      src={teamImages[member.image as keyof typeof teamImages]}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(min-width: 768px) 220px, 100vw"
+                    />
                   </div>
-                  
-                  {/* Content */}
-                  <div className="p-6">
+
+                  <div className="p-6 lg:p-8">
                     <h3 className="font-serif text-xl font-semibold text-foreground">
                       {member.name}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-accent">
+                    <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-accent">
                       {member.role}
                     </p>
                     <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                       {member.bio}
                     </p>
-                    
-                    {/* Social Links */}
-                    <div className="mt-6 flex gap-3">
-                      <a
-                        href={member.linkedin}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                        aria-label={`${member.name} on LinkedIn`}
-                      >
-                        <Linkedin className="h-4 w-4" />
-                      </a>
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                        aria-label={`Email ${member.name}`}
-                      >
-                        <Mail className="h-4 w-4" />
-                      </a>
-                    </div>
+
+                    {"specialties" in member && Array.isArray(member.specialties) ? (
+                      <div className="mt-6">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                          Specialties
+                        </p>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {member.specialties.map((specialty) => (
+                            <span
+                              key={specialty}
+                              className="rounded-full bg-secondary px-3 py-1 text-xs text-secondary-foreground"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </StaggerItem>

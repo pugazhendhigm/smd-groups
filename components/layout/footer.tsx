@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { navigationItems, services, contactInfo, socialLinks } from "@/lib/data";
+import appLogo from "@/assets/appimg.png";
 
 export function Footer() {
   return (
@@ -10,10 +12,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="font-serif text-xl font-bold text-primary-foreground">
-                  S
-                </span>
+              <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+                <Image
+                  src={appLogo}
+                  alt="SMD Group logo"
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                />
               </div>
               <span className="font-serif text-xl font-semibold text-foreground">
                 SMD Group
@@ -120,7 +126,7 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="/privacy"
+              href="/about/privacy-policy"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Privacy Policy
