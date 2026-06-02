@@ -232,7 +232,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </h2>
             </FadeIn>
 
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <div className="mt-6 grid gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-8">
               {relatedPosts.map((relatedPost, index) => (
                 <FadeIn key={relatedPost.id} delay={index * 0.1}>
                   <Link

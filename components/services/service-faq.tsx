@@ -44,7 +44,7 @@ export function ServiceFAQ({ faqs }: ServiceFAQProps) {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="border-t border-border px-6 pb-6 pt-4">
+                <div className="border-t border-border px-4 pb-4 pt-3 sm:px-6 sm:pb-6 sm:pt-4">
                   <p className="leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </div>
               </motion.div>
