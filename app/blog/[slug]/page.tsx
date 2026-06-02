@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-6 sm:gap-4">
               <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
                 {post.category}
               </span>
