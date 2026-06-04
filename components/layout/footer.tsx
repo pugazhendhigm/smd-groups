@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Star, Mail, Phone, MapPin } from "lucide-react";
 import { navigationItems, services, contactInfo, socialLinks } from "@/lib/data";
 import appLogo from "@/assets/appimg.png";
 
@@ -34,12 +34,15 @@ export function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                   aria-label={social.name}
                 >
                   {social.icon === "linkedin" && <Linkedin className="h-4 w-4" />}
-                  {social.icon === "twitter" && <Twitter className="h-4 w-4" />}
                   {social.icon === "facebook" && <Facebook className="h-4 w-4" />}
+                  {social.icon === "instagram" && <Instagram className="h-4 w-4" />}
+                  {social.icon === "yelp" && <Star className="h-4 w-4" />}
                 </a>
               ))}
             </div>

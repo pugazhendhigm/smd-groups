@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import { Header, Footer } from "@/components/layout";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -69,16 +71,23 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+const VALID_THEMES = new Set(["1", "2", "3"]);
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get("site-theme")?.value;
+  const activeTheme = VALID_THEMES.has(themeCookie ?? "") ? themeCookie : "1";
+
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className="bg-background" data-site-theme={activeTheme}>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <ScrollToTop />
         <Header />
         <main className="min-h-screen w-full overflow-x-hidden">{children}</main>
         <Footer />

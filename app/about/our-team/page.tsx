@@ -62,12 +62,12 @@ export default function OurTeamPage() {
             {teamMembers.map((member) => (
               <StaggerItem key={member.id}>
                 <div className="group overflow-hidden rounded-2xl border border-border bg-card md:grid md:grid-cols-[200px_1fr] md:items-stretch lg:grid-cols-[220px_1fr]">
-                  <div className="relative h-52 overflow-hidden bg-secondary sm:h-56 md:h-full md:min-h-[220px]">
+                  <div className="relative aspect-[4/5] bg-secondary p-4 sm:aspect-[5/4] sm:p-5 md:min-h-[220px] md:p-4 lg:h-full lg:aspect-auto">
                     <Image
                       src={teamImages[member.image as keyof typeof teamImages]}
                       alt={member.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-contain object-top p-2 lg:object-cover lg:p-0"
                       sizes="(min-width: 768px) 220px, 100vw"
                     />
                   </div>

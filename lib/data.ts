@@ -512,7 +512,8 @@ export const contactInfo = {
 
 // Social Links
 export const socialLinks = [
-  { name: "LinkedIn", href: "#", icon: "linkedin" },
-  { name: "Twitter", href: "#", icon: "twitter" },
-  { name: "Facebook", href: "#", icon: "facebook" },
+  { name: "Facebook", href: "https://www.facebook.com/SMDFINANCIALGROUP/", icon: "facebook" },
+  { name: "Yelp", href: "https://www.yelp.com/biz/smd-financial-group-atlanta?osq=SMD+Financial+Group", icon: "yelp" },
+  { name: "Instagram", href: "https://www.instagram.com/smd_financial_group/", icon: "instagram" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/smdfinancialgroup", icon: "linkedin" },
 ];
