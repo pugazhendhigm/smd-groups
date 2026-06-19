@@ -30,7 +30,7 @@ export default function WhoWeArePage() {
           <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <FadeIn>
-                <span className="text-sm font-medium uppercase tracking-wider text-accent">
+                <span className="luxury-label">
                   Our Story
                 </span>
               </FadeIn>
@@ -69,11 +69,11 @@ export default function WhoWeArePage() {
 
             <FadeIn delay={0.2} direction="left">
               <div className="relative">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
-                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-secondary">
+                <div className="aspect-[4/3] overflow-hidden rounded-[2rem] luxury-card-dark">
+                  <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,rgba(212,160,41,0.12),rgba(163,24,24,0.08))]">
                     <div className="text-center p-8">
-                      <p className="font-serif text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">25+</p>
-                      <p className="mt-2 text-muted-foreground">Years of Excellence</p>
+                      <p className="font-serif text-4xl font-bold text-accent sm:text-5xl md:text-6xl">25+</p>
+                      <p className="mt-2 text-white/72">Years of Excellence</p>
                     </div>
                   </div>
                 </div>
@@ -84,15 +84,15 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-border bg-card py-10 sm:py-12 md:py-16">
+      <section className="luxury-stat-bar">
         <div className="container-page">
           <StaggerContainer className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
             {companyStats.map((stat, index) => (
-              <StaggerItem key={index} className="text-center">
-                <p className="font-serif text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+              <StaggerItem key={index} className="rounded-[1.4rem] border border-accent/10 bg-white/4 px-4 py-5 text-center backdrop-blur-sm">
+                <p className="font-serif text-2xl font-bold text-accent sm:text-3xl lg:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{stat.label}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.24em] text-white/60 sm:mt-2 sm:text-sm">{stat.label}</p>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -104,7 +104,7 @@ export default function WhoWeArePage() {
         <div className="container-page">
           <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             <FadeIn>
-              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8 lg:p-10">
+              <div className="luxury-card p-5 sm:p-6 md:p-8 lg:p-10">
                 <div className="flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10">
                     <Eye className="h-7 w-7 text-accent" />
@@ -124,7 +124,7 @@ export default function WhoWeArePage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8 lg:p-10">
+              <div className="luxury-card p-5 sm:p-6 md:p-8 lg:p-10">
                 <div className="flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
                     <Target className="h-7 w-7 text-primary" />
@@ -146,7 +146,7 @@ export default function WhoWeArePage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-secondary/50">
+      <section className="section-padding section-surface-cream">
         <div className="container-page">
           <div className="text-center">
             <FadeIn>
@@ -166,7 +166,7 @@ export default function WhoWeArePage() {
           <StaggerContainer className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 md:mt-12 lg:grid-cols-4">
             {companyValues.map((value, index) => (
               <StaggerItem key={index}>
-                <div className="h-full rounded-2xl border border-border bg-card p-6">
+                <div className="h-full luxury-card p-6">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
                     <CheckCircle2 className="h-5 w-5 text-accent" />
                   </div>
@@ -182,18 +182,18 @@ export default function WhoWeArePage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding section-surface-dark">
         <div className="container-page">
           <FadeIn>
-            <div className="rounded-2xl bg-primary p-6 text-center sm:p-8 lg:p-12">
-              <h2 className="font-serif text-xl font-bold text-primary-foreground sm:text-2xl lg:text-3xl">
+            <div className="luxury-cta-panel">
+              <h2 className="font-serif text-xl font-bold text-accent sm:text-2xl lg:text-3xl">
                 <span className="text-balance">Ready to Meet Our Team?</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+              <p className="mx-auto mt-4 max-w-xl text-white/72">
                 Get to know the experts who will be working with you to achieve your
                 financial goals.
               </p>
-              <Button asChild size="lg" variant="secondary" className="mt-8">
+              <Button asChild size="lg" className="mt-8">
                 <Link href="/about/our-team">
                   Meet the Team
                   <ArrowRight className="ml-2 h-4 w-4" />

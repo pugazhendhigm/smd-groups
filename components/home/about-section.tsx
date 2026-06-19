@@ -7,36 +7,37 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function AboutSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-surface-cream">
       <div className="container-page">
         <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
             <FadeIn>
-              <span className="text-sm font-medium uppercase tracking-wider text-accent">
+              <span className="luxury-label">
                 Who We Are
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
                 <span className="text-balance">
-                  Your Trusted Partner in Financial Excellence
+                  Built to Guide Financial Success with Clarity and Care
                 </span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="mt-6 leading-relaxed text-muted-foreground">
-                For over 25 years, SMD Group has been at the forefront of financial
-                advisory services. We combine deep expertise with personalized
-                attention to deliver solutions that make a real difference in our
-                clients&apos; lives and businesses.
+                SMD Financial Group LLC is a tax and accounting company
+                headquartered in Atlanta, USA. Our experienced staff includes
+                Certified Public Accountants, Enrolled Agents, and other
+                professionals with investment advisory licenses.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Our team of seasoned professionals brings together diverse
-                backgrounds in tax law, accounting, and business strategy to
-                provide comprehensive support for all your financial needs.
+                Our team is ideally equipped to provide best-in-class solutions
+                for our clients. We aim to drive exceptional value through
+                professional service, practical insight, and thoughtful
+                innovation that helps clients make better financial decisions.
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
@@ -52,9 +53,9 @@ export function AboutSection() {
           {/* Vision & Mission Cards */}
           <div className="space-y-6">
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
+              <div className="luxury-card p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/12">
                     <Eye className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="font-serif text-xl font-semibold text-foreground">
@@ -62,27 +63,29 @@ export function AboutSection() {
                   </h3>
                 </div>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  To be the most trusted financial advisory firm, known for
-                  transforming complex financial challenges into opportunities
-                  for growth and prosperity.
+                  SMD Financial Group LLC will be known for having provided
+                  delight for its more than a million customers in the area of
+                  financial success in the next decade.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.3} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
+              <div className="luxury-card-dark p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Target className="h-6 w-6 text-primary" />
+                    <Target className="h-6 w-6 text-accent" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground">
+                  <h3 className="font-serif text-xl font-semibold text-accent">
                     Our Mission
                   </h3>
                 </div>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  To provide exceptional, personalized financial services that
-                  empower our clients to achieve their goals while maintaining
-                  the highest standards of integrity and excellence.
+                <p className="mt-4 leading-relaxed text-white/72">
+                  Our mission is to help our clients make the best possible
+                  financial decisions with focused planning and execution. We
+                  accomplish this by offering holistic, comprehensive advisory
+                  services that help clients prioritize and attain their life
+                  goals.
                 </p>
               </div>
             </FadeIn>

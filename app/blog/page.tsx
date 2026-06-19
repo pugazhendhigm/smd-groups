@@ -40,7 +40,7 @@ export default function BlogPage() {
               <StaggerItem key={post.id}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-accent/50 hover:shadow-md"
+                  className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)]"
                 >
                   {/* Image */}
                   <div className="aspect-[16/10] bg-secondary">
@@ -103,8 +103,8 @@ export default function BlogPage() {
                     key={page}
                     className={`flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                       page === 1
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+                        ? "bg-accent text-black"
+                        : "bg-card text-muted-foreground hover:bg-card/80"
                     }`}
                   >
                     {page}
@@ -117,10 +117,10 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="section-padding bg-secondary/50">
+      <section className="section-padding section-surface-cream">
         <div className="container-page">
           <FadeIn>
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-2xl luxury-card p-6 text-center sm:p-8">
               <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl lg:text-3xl">
                 <span className="text-balance">
                   Stay Updated with Our Latest Insights
@@ -134,11 +134,11 @@ export default function BlogPage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full rounded-lg border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:max-w-sm md:w-80"
+                  className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:max-w-sm md:w-80"
                 />
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-black shadow-[0_16px_30px_rgba(212,160,41,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
                 >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4" />

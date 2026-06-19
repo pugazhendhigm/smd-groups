@@ -41,7 +41,7 @@ export default function ServicesPage() {
                 <StaggerItem key={service.id}>
                   <Link
                     href={`/services/${service.id}`}
-                    className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:border-accent/50 hover:shadow-md sm:p-6 md:p-8"
+                    className="group flex h-full flex-col luxury-card p-5 transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)] sm:p-6 md:p-8"
                   >
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 transition-colors group-hover:bg-accent/20">
                       <Icon className="h-7 w-7 text-accent" />
@@ -65,11 +65,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Our Services */}
-      <section className="section-padding bg-secondary/50">
+      <section className="section-padding section-surface-cream">
         <div className="container-page">
           <div className="text-center">
             <FadeIn>
-              <span className="text-sm font-medium uppercase tracking-wider text-accent">
+              <span className="luxury-label">
                 Why Choose Our Services
               </span>
             </FadeIn>
@@ -99,8 +99,8 @@ export default function ServicesPage() {
             ].map((item, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <span className="font-serif text-xl font-bold text-primary">{index + 1}</span>
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/12">
+                    <span className="font-serif text-xl font-bold text-accent">{index + 1}</span>
                   </div>
                   <h3 className="mt-4 font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
@@ -112,28 +112,28 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding section-surface-dark">
         <div className="container-page">
           <FadeIn>
-            <div className="rounded-2xl bg-primary p-6 text-center sm:p-8 lg:p-12">
-              <h2 className="font-serif text-xl font-bold text-primary-foreground sm:text-2xl lg:text-3xl">
+            <div className="luxury-cta-panel">
+              <h2 className="font-serif text-xl font-bold text-accent sm:text-2xl lg:text-3xl">
                 <span className="text-balance">Not Sure Which Service You Need?</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+              <p className="mx-auto mt-4 max-w-xl text-white/72">
                 Schedule a free consultation and our experts will help you identify
                 the best solutions for your financial needs.
               </p>
               <div className="mt-6 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
                 <Link
                   href="/client-intake"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-secondary px-6 py-3 font-medium text-secondary-foreground transition-colors hover:bg-secondary/90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-black shadow-[0_16px_30px_rgba(212,160,41,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
                 >
                   Schedule Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex w-full items-center justify-center rounded-lg border border-primary-foreground/30 px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/30 bg-transparent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/10 hover:text-accent sm:w-auto"
                 >
                   Contact Us
                 </Link>

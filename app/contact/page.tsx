@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { contactInfo } from "@/lib/data";
 import { PageHeader } from "@/components/shared/page-header";
+import { LocationMap } from "@/components/shared/location-map";
 import { ContactForm } from "@/components/contact/contact-form";
 import { FadeIn } from "@/components/ui/motion";
 
@@ -29,7 +30,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <FadeIn>
-                <span className="text-sm font-medium uppercase tracking-wider text-accent">
+                <span className="luxury-label">
                   Get in Touch
                 </span>
               </FadeIn>
@@ -51,8 +52,8 @@ export default function ContactPage() {
               <FadeIn delay={0.3}>
                 <div className="mt-10 space-y-6">
                   <div className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary">
-                      <MapPin className="h-5 w-5 text-muted-foreground" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-card">
+                      <MapPin className="h-5 w-5 text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Address</p>
@@ -63,8 +64,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary">
-                      <Phone className="h-5 w-5 text-muted-foreground" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-card">
+                      <Phone className="h-5 w-5 text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
@@ -78,8 +79,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary">
-                      <Mail className="h-5 w-5 text-muted-foreground" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-card">
+                      <Mail className="h-5 w-5 text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
@@ -93,8 +94,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary">
-                      <Clock className="h-5 w-5 text-muted-foreground" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-card">
+                      <Clock className="h-5 w-5 text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Business Hours</p>
@@ -109,7 +110,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8">
+              <div className="luxury-card p-5 sm:p-6 md:p-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground">
                   Send Us a Message
                 </h3>
@@ -124,7 +125,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="section-padding bg-secondary/50">
+      <section className="section-padding section-surface-cream">
         <div className="container-page">
           <FadeIn>
             <div className="text-center">
@@ -132,30 +133,14 @@ export default function ContactPage() {
                 Visit Our Office
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Located in the heart of the Financial District
+                {contactInfo.mapLocation}
               </p>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mt-8 h-64 overflow-hidden rounded-2xl border border-border bg-card sm:mt-10 sm:h-80 md:mt-12 md:h-96">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="mx-auto h-16 w-16 text-muted-foreground/30" />
-                  <p className="mt-4 text-lg font-medium text-foreground">
-                    123 Financial District, Suite 400
-                  </p>
-                  <p className="text-muted-foreground">New York, NY 10004</p>
-                  <a
-                    href="https://maps.google.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
-                  >
-                    Get Directions
-                  </a>
-                </div>
-              </div>
+            <div className="mt-8 sm:mt-10 md:mt-12">
+              <LocationMap showDirectionsLink />
             </div>
           </FadeIn>
         </div>

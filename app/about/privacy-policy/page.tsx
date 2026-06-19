@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <FadeIn>
-            <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8 lg:p-10">
+            <div className="luxury-card p-5 sm:p-6 md:p-8 lg:p-10">
               <div className="flex flex-col gap-2 border-b border-border pb-6">
                 <p className="text-sm font-medium text-muted-foreground">
                   Effective Date: 01/01/2026
