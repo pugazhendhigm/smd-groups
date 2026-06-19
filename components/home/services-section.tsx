@@ -100,11 +100,11 @@ const featuredHomeServices = [
 
 export function ServicesSection() {
   return (
-    <section className="section-padding bg-secondary/50">
+    <section className="section-padding section-surface-cream">
       <div className="container-page">
         <div className="text-center">
           <FadeIn>
-            <span className="text-sm font-medium uppercase tracking-wider text-accent">
+            <span className="luxury-label">
               Our Services
             </span>
           </FadeIn>
@@ -131,9 +131,9 @@ export function ServicesSection() {
               <StaggerItem key={service.id}>
                 <Link
                   href={service.href}
-                  className="group block h-full rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:border-accent/50 hover:shadow-md sm:p-6 md:p-8"
+                  className="group block h-full luxury-card p-5 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)] sm:p-6 md:p-8"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 transition-colors group-hover:bg-accent/20">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/12 transition-colors group-hover:bg-accent/18">
                     <Icon className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="mt-6 font-serif text-xl font-semibold text-foreground">

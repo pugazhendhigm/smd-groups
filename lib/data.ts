@@ -504,11 +504,16 @@ export const companyStats = [
 
 // Contact Info
 export const contactInfo = {
-  address: "123 Financial District, Suite 400, New York, NY 10004",
+  address: "PX4W+V8 New York, USA",
+  mapLocation: "PX4W+V8 New York, USA",
   phone: "(555) 123-4567",
   email: "info@smdgroup.com",
   hours: "Monday - Friday: 9:00 AM - 6:00 PM EST",
 };
+
+export const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(contactInfo.mapLocation)}&z=16&output=embed`;
+
+export const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(contactInfo.mapLocation)}`;
 
 // Social Links
 export const socialLinks = [

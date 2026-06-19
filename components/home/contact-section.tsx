@@ -2,17 +2,18 @@
 
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { contactInfo } from "@/lib/data";
+import { LocationMap } from "@/components/shared/location-map";
 import { FadeIn } from "@/components/ui/motion";
 
 export function ContactSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-surface-cream">
       <div className="container-page">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Contact Info */}
           <div>
             <FadeIn>
-              <span className="text-sm font-medium uppercase tracking-wider text-accent">
+              <span className="luxury-label">
                 Get in Touch
               </span>
             </FadeIn>
@@ -33,8 +34,8 @@ export function ContactSection() {
             <FadeIn delay={0.3}>
               <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <MapPin className="h-5 w-5 text-muted-foreground" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-card">
+                    <MapPin className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Address</p>
@@ -45,8 +46,8 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <Phone className="h-5 w-5 text-muted-foreground" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-card">
+                    <Phone className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
@@ -60,8 +61,8 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <Mail className="h-5 w-5 text-muted-foreground" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-card">
+                    <Mail className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
@@ -75,8 +76,8 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-                    <Clock className="h-5 w-5 text-muted-foreground" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-card">
+                    <Clock className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Business Hours</p>
@@ -89,21 +90,8 @@ export function ContactSection() {
             </FadeIn>
           </div>
 
-          {/* Map Placeholder */}
           <FadeIn delay={0.2} direction="left">
-            <div className="h-full min-h-[280px] overflow-hidden rounded-2xl border border-border bg-secondary sm:min-h-[320px] md:min-h-[400px]">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="mx-auto h-12 w-12 text-muted-foreground/50" />
-                  <p className="mt-4 text-sm text-muted-foreground">
-                    123 Financial District, Suite 400
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    New York, NY 10004
-                  </p>
-                </div>
-              </div>
-            </div>
+            <LocationMap className="h-full" />
           </FadeIn>
         </div>
       </div>

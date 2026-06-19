@@ -38,23 +38,23 @@ const reasons = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-surface-dark luxury-section-bg-3">
       <div className="container-page">
         <div className="text-center">
           <FadeIn>
-            <span className="text-sm font-medium uppercase tracking-wider text-accent">
+            <span className="luxury-label">
               Why Choose Us
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
+            <h2 className="mt-3 font-serif text-2xl font-bold text-white sm:mt-4 sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 The SMD Group Difference
               </span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-white/68">
               We go beyond traditional financial services to become true partners
               in your success.
             </p>
@@ -64,15 +64,17 @@ export function WhyChooseUsSection() {
         <StaggerContainer className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:mt-16 lg:grid-cols-3">
           {reasons.map((reason, index) => (
             <StaggerItem key={index}>
-              <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <reason.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">{reason.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {reason.description}
-                  </p>
+              <div className="rounded-[1.75rem] border border-accent/12 bg-white/4 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/12">
+                    <reason.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">{reason.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/68">
+                      {reason.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </StaggerItem>

@@ -7,18 +7,18 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function CTASection() {
   return (
-    <section className="section-padding bg-primary">
+    <section className="section-padding section-surface-dark">
       <div className="container-page">
-        <div className="text-center">
+        <div className="luxury-cta-panel">
           <FadeIn>
-            <h2 className="font-serif text-2xl font-bold text-primary-foreground sm:text-3xl lg:text-4xl">
+            <h2 className="font-serif text-2xl font-bold text-accent sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 Ready to Take Control of Your Finances?
               </span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mx-auto mt-4 max-w-2xl text-primary-foreground/80">
+            <p className="mx-auto mt-4 max-w-2xl text-white/72">
               Schedule a free consultation with our experts today. Let us show you
               how we can help you achieve your financial goals.
             </p>
@@ -28,8 +28,7 @@ export function CTASection() {
               <Button
                 asChild
                 size="lg"
-                variant="secondary"
-                className="w-full sm:min-w-[180px] sm:w-auto"
+                className="w-full border border-accent/40 bg-accent text-black hover:bg-accent/90 sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/client-intake">
                   Start Your Journey
@@ -40,7 +39,7 @@ export function CTASection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 sm:min-w-[180px] sm:w-auto"
+                className="w-full border-accent/30 bg-transparent text-white hover:bg-accent/10 hover:text-accent sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>

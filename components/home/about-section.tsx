@@ -7,13 +7,13 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function AboutSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding section-surface-cream">
       <div className="container-page">
         <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
             <FadeIn>
-              <span className="text-sm font-medium uppercase tracking-wider text-accent">
+              <span className="luxury-label">
                 Who We Are
               </span>
             </FadeIn>
@@ -53,9 +53,9 @@ export function AboutSection() {
           {/* Vision & Mission Cards */}
           <div className="space-y-6">
             <FadeIn delay={0.2} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
+              <div className="luxury-card p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/12">
                     <Eye className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="font-serif text-xl font-semibold text-foreground">
@@ -71,16 +71,16 @@ export function AboutSection() {
             </FadeIn>
 
             <FadeIn delay={0.3} direction="left">
-              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 md:p-8">
+              <div className="luxury-card-dark p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Target className="h-6 w-6 text-primary" />
+                    <Target className="h-6 w-6 text-accent" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground">
+                  <h3 className="font-serif text-xl font-semibold text-accent">
                     Our Mission
                   </h3>
                 </div>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
+                <p className="mt-4 leading-relaxed text-white/72">
                   Our mission is to help our clients make the best possible
                   financial decisions with focused planning and execution. We
                   accomplish this by offering holistic, comprehensive advisory

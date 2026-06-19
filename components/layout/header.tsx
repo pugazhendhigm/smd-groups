@@ -33,10 +33,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "border-accent/20 bg-[#0f0d0a]/88 shadow-[0_18px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+          : "border-transparent bg-transparent"
       )}
     >
       <div className="container-page">
@@ -52,7 +52,12 @@ export function Header() {
                 sizes="40px"
               />
             </div>
-            <span className="min-w-0 font-serif text-sm font-semibold leading-tight text-foreground sm:text-base md:text-lg lg:text-xl">
+            <span
+              className={cn(
+                "min-w-0 font-serif text-sm font-semibold leading-tight sm:text-base md:text-lg lg:text-xl",
+                pathname === "/" ? "text-white" : "text-accent"
+              )}
+            >
               <span className="sm:hidden">SMD Group</span>
               <span className="hidden sm:inline md:hidden">SMD Financial Group</span>
               <span className="hidden md:inline">SMD Financial Group LLC</span>
@@ -73,12 +78,12 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors",
+                    "flex items-center gap-1 px-4 py-2 text-sm font-medium uppercase tracking-[0.22em] transition-colors",
                     pathname === item.href ||
                       (item.children &&
                         item.children.some((child) => pathname === child.href))
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-accent"
+                      : "text-white/72 hover:text-accent"
                   )}
                 >
                   {item.title}
@@ -102,7 +107,7 @@ export function Header() {
                       transition={{ duration: 0.2 }}
                       className="absolute left-0 top-full min-w-[220px] pt-2"
                     >
-                      <div className="rounded-lg border border-border bg-card p-2 shadow-lg">
+                      <div className="rounded-2xl border border-accent/20 bg-[#15120e]/95 p-2 shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
@@ -110,8 +115,8 @@ export function Header() {
                             className={cn(
                               "block rounded-md px-4 py-2.5 text-sm transition-colors",
                               pathname === child.href
-                                ? "bg-secondary text-foreground"
-                                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                                ? "bg-accent/12 text-accent"
+                                : "text-white/72 hover:bg-accent/10 hover:text-accent"
                             )}
                           >
                             {child.title}
@@ -136,7 +141,7 @@ export function Header() {
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-secondary"
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-accent/10 hover:text-accent"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -157,11 +162,11 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-border bg-card lg:hidden"
+            className="overflow-hidden border-t border-accent/20 bg-[#120f0c]/96 backdrop-blur-xl lg:hidden"
           >
             <div className="container-page py-4 sm:py-5">
               {navigationItems.map((item) => (
-                <div key={item.title} className="border-b border-border py-2 last:border-0">
+                <div key={item.title} className="border-b border-white/10 py-2 last:border-0">
                   {item.children ? (
                     <div>
                       <button
@@ -170,7 +175,7 @@ export function Header() {
                             activeDropdown === item.title ? null : item.title
                           )
                         }
-                        className="flex w-full items-center justify-between py-2 text-base font-medium text-foreground"
+                        className="flex w-full items-center justify-between py-2 text-base font-medium text-white"
                       >
                         {item.title}
                         <ChevronDown
@@ -194,7 +199,7 @@ export function Header() {
                                 <Link
                                   key={child.href}
                                   href={child.href}
-                                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                  className="block py-2 text-sm text-white/72 transition-colors hover:text-accent"
                                 >
                                   {child.title}
                                 </Link>
@@ -207,7 +212,7 @@ export function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block py-2 text-base font-medium text-foreground"
+                      className="block py-2 text-base font-medium text-white"
                     >
                       {item.title}
                     </Link>

@@ -60,14 +60,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-secondary/50 pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pb-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-        
+      <section className="luxury-page-header">
         <div className="container-narrow relative">
           <FadeIn>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-accent"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
@@ -76,10 +74,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <FadeIn delay={0.1}>
             <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-6 sm:gap-4">
-              <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
+              <span className="rounded-full border border-accent/25 bg-white/5 px-3 py-1 text-sm font-medium text-accent">
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1 text-sm text-white/60">
                 <Clock className="h-4 w-4" />
                 {post.readTime}
               </span>
@@ -87,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="mt-3 font-serif text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl lg:text-4xl">
+            <h1 className="mt-3 font-serif text-2xl font-bold text-white sm:mt-4 sm:text-3xl lg:text-4xl">
               <span className="text-balance">{post.title}</span>
             </h1>
           </FadeIn>
@@ -95,15 +93,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <FadeIn delay={0.3}>
             <div className="mt-5 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-center sm:gap-4">
               <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-card text-base font-bold text-muted-foreground sm:h-12 sm:w-12 sm:text-lg">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/20 bg-white/5 text-base font-bold text-accent sm:h-12 sm:w-12 sm:text-lg">
                   {post.author.split(" ").map((n) => n[0]).join("")}
                 </div>
                 <div className="min-w-0">
-                  <p className="font-medium text-foreground">{post.author}</p>
-                  <p className="text-sm text-muted-foreground">{post.authorRole}</p>
+                  <p className="font-medium text-white">{post.author}</p>
+                  <p className="text-sm text-white/60">{post.authorRole}</p>
                 </div>
               </div>
-              <span className="flex items-center gap-1 text-sm text-muted-foreground sm:ml-auto">
+              <span className="flex items-center gap-1 text-sm text-white/60 sm:ml-auto">
                 <Calendar className="h-4 w-4" />
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -143,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       ].map((social) => (
                         <button
                           key={social.label}
-                          className="flex items-center gap-2 rounded-lg bg-secondary px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary/80 hover:text-foreground"
+                          className="flex items-center gap-2 rounded-lg border border-accent/15 bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/10 hover:text-accent"
                         >
                           <social.icon className="h-4 w-4" />
                           {social.label}
@@ -224,7 +222,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="section-padding bg-secondary/50">
+        <section className="section-padding section-surface-cream">
           <div className="container-page">
             <FadeIn>
               <h2 className="font-serif text-2xl font-bold text-foreground">
@@ -237,7 +235,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <FadeIn key={relatedPost.id} delay={index * 0.1}>
                   <Link
                     href={`/blog/${relatedPost.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-accent/50 hover:shadow-md"
+                    className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)]"
                   >
                     <div className="aspect-[16/10] bg-secondary">
                       <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-secondary">

@@ -17,9 +17,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps) {
   return (
-    <section className="relative bg-secondary/50 pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pb-16">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      
+    <section className="luxury-page-header">
       <div className="container-page relative">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <FadeIn>
@@ -27,14 +25,14 @@ export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps)
               {breadcrumbs.map((crumb, index) => (
                 <span key={crumb.href} className="flex items-center gap-2">
                   {index > 0 && (
-                    <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    <ChevronRight className="h-4 w-4 shrink-0 text-white/40" />
                   )}
                   {index === breadcrumbs.length - 1 ? (
-                    <span className="text-foreground">{crumb.label}</span>
+                    <span className="text-accent">{crumb.label}</span>
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="text-muted-foreground transition-colors hover:text-foreground"
+                      className="text-white/60 transition-colors hover:text-accent"
                     >
                       {crumb.label}
                     </Link>
@@ -46,14 +44,14 @@ export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps)
         )}
 
         <FadeIn delay={0.1}>
-          <h1 className="font-serif text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             <span className="text-balance">{title}</span>
           </h1>
         </FadeIn>
 
         {description && (
           <FadeIn delay={0.2}>
-            <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:mt-4 sm:text-lg">
+            <p className="mt-3 max-w-2xl text-base text-white/72 sm:mt-4 sm:text-lg">
               {description}
             </p>
           </FadeIn>

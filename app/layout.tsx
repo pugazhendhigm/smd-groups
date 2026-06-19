@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { Inter, Playfair_Display } from "next/font/google";
-import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import { Header, Footer } from "@/components/layout";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import { PageTheme } from "@/components/shared/page-theme";
+import { luxuryBackgroundCssVars } from "@/lib/luxury-backgrounds";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -64,29 +66,33 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f3ef" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1a2e" },
+    { media: "(prefers-color-scheme: light)", color: "#f2ebd9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0908" },
   ],
   width: "device-width",
   initialScale: 1,
 };
-
-const VALID_THEMES = new Set(["1", "2", "3"]);
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const themeCookie = cookieStore.get("site-theme")?.value;
-  const activeTheme = VALID_THEMES.has(themeCookie ?? "") ? themeCookie : "1";
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "";
+  const pageTheme = pathname === "/" ? "home" : "inner";
 
   return (
-    <html lang="en" className="bg-background" data-site-theme={activeTheme}>
+    <html
+      lang="en"
+      className="bg-background"
+      style={luxuryBackgroundCssVars as React.CSSProperties}
+    >
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+        data-page={pageTheme}
       >
+        <PageTheme />
         <ScrollToTop />
         <Header />
         <main className="min-h-screen w-full overflow-x-hidden">{children}</main>
