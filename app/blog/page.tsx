@@ -40,7 +40,7 @@ export default function BlogPage() {
               <StaggerItem key={post.id}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)]"
+                  className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(196,30,58,0.14)]"
                 >
                   {/* Image */}
                   <div className="aspect-[16/10] bg-secondary">
@@ -103,7 +103,7 @@ export default function BlogPage() {
                     key={page}
                     className={`flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                       page === 1
-                        ? "bg-accent text-black"
+                        ? "bg-accent text-white"
                         : "bg-card text-muted-foreground hover:bg-card/80"
                     }`}
                   >
@@ -138,7 +138,7 @@ export default function BlogPage() {
                 />
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-black shadow-[0_16px_30px_rgba(212,160,41,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-white shadow-[0_16px_30px_rgba(196,30,58,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
                 >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4" />

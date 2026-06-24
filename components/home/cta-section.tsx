@@ -11,7 +11,7 @@ export function CTASection() {
       <div className="container-page">
         <div className="luxury-cta-panel">
           <FadeIn>
-            <h2 className="font-serif text-2xl font-bold text-accent sm:text-3xl lg:text-4xl">
+            <h2 className="font-serif text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
               <span className="text-balance">
                 Ready to Take Control of Your Finances?
               </span>
@@ -28,7 +28,7 @@ export function CTASection() {
               <Button
                 asChild
                 size="lg"
-                className="w-full border border-accent/40 bg-accent text-black hover:bg-accent/90 sm:min-w-[180px] sm:w-auto"
+                className="w-full border border-accent/40 bg-accent text-white hover:bg-accent/90 sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/client-intake">
                   Start Your Journey
@@ -39,7 +39,7 @@ export function CTASection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full border-accent/30 bg-transparent text-white hover:bg-accent/10 hover:text-accent sm:min-w-[180px] sm:w-auto"
+                className="w-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white sm:min-w-[180px] sm:w-auto"
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>

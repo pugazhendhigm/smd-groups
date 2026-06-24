@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TeamMemberCard } from "@/components/about/team-member-card";
 import { teamMembers } from "@/lib/data";
-import { luxuryBackgroundVariants } from "@/lib/luxury-backgrounds";
 import { PageHeader } from "@/components/shared/page-header";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 import subhashiniImage from "@/assets/subhashini.webp";
@@ -68,9 +67,6 @@ export default function OurTeamPage() {
                     "specialties" in member && Array.isArray(member.specialties)
                       ? member.specialties
                       : undefined
-                  }
-                  backgroundVariant={
-                    luxuryBackgroundVariants[index % luxuryBackgroundVariants.length]
                   }
                 />
               </StaggerItem>

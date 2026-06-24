@@ -70,7 +70,7 @@ export default function WhoWeArePage() {
             <FadeIn delay={0.2} direction="left">
               <div className="relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-[2rem] luxury-card-dark">
-                  <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,rgba(212,160,41,0.12),rgba(163,24,24,0.08))]">
+                  <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,rgba(196,30,58,0.12),rgba(153,27,27,0.08))]">
                     <div className="text-center p-8">
                       <p className="font-serif text-4xl font-bold text-accent sm:text-5xl md:text-6xl">25+</p>
                       <p className="mt-2 text-white/72">Years of Excellence</p>

@@ -31,7 +31,7 @@ export function BlogSearch({ categories }: BlogSearchProps) {
           onClick={() => setSelectedCategory(null)}
           className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
             selectedCategory === null
-              ? "border border-accent/40 bg-accent text-black"
+              ? "border border-accent/40 bg-accent text-white"
               : "border border-border bg-card text-muted-foreground hover:bg-accent/10 hover:text-accent"
           }`}
         >
@@ -43,7 +43,7 @@ export function BlogSearch({ categories }: BlogSearchProps) {
             onClick={() => setSelectedCategory(category)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               selectedCategory === category
-                ? "border border-accent/40 bg-accent text-black"
+                ? "border border-accent/40 bg-accent text-white"
                 : "border border-border bg-card text-muted-foreground hover:bg-accent/10 hover:text-accent"
             }`}
           >

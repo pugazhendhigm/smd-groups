@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <FadeIn>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-accent"
+              className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
@@ -235,7 +235,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <FadeIn key={relatedPost.id} delay={index * 0.1}>
                   <Link
                     href={`/blog/${relatedPost.slug}`}
-                    className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)]"
+                    className="group flex h-full flex-col overflow-hidden luxury-card transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(196,30,58,0.14)]"
                   >
                     <div className="aspect-[16/10] bg-secondary">
                       <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-secondary">

@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Header, Footer } from "@/components/layout";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { PageTheme } from "@/components/shared/page-theme";
-import { luxuryBackgroundCssVars } from "@/lib/luxury-backgrounds";
+import { homeBackgroundCssVars } from "@/lib/home-background";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f2ebd9" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0908" },
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a0505" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -86,7 +86,7 @@ export default async function RootLayout({
     <html
       lang="en"
       className="bg-background"
-      style={luxuryBackgroundCssVars as React.CSSProperties}
+      style={homeBackgroundCssVars as React.CSSProperties}
     >
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}

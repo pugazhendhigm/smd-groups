@@ -28,11 +28,11 @@ export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps)
                     <ChevronRight className="h-4 w-4 shrink-0 text-white/40" />
                   )}
                   {index === breadcrumbs.length - 1 ? (
-                    <span className="text-accent">{crumb.label}</span>
+                    <span className="text-white/90">{crumb.label}</span>
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="text-white/60 transition-colors hover:text-accent"
+                      className="text-white/65 transition-colors hover:text-white"
                     >
                       {crumb.label}
                     </Link>

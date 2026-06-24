@@ -1,6 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
-import type { LuxuryBackgroundVariant } from "@/lib/luxury-backgrounds";
 
 interface TeamMemberCardProps {
   name: string;
@@ -8,15 +7,14 @@ interface TeamMemberCardProps {
   bio: string;
   image: StaticImageData;
   specialties?: string[];
-  backgroundVariant: LuxuryBackgroundVariant;
   className?: string;
 }
 
-const backgroundClassMap: Record<LuxuryBackgroundVariant, string> = {
-  primary: "luxury-bg-surface-1",
-  secondary: "luxury-bg-surface-2",
-  tertiary: "luxury-bg-surface-3",
-};
+const backgroundClasses = [
+  "luxury-bg-surface-1",
+  "luxury-bg-surface-2",
+  "luxury-bg-surface-3",
+] as const;
 
 export function TeamMemberCard({
   name,
@@ -24,20 +22,24 @@ export function TeamMemberCard({
   bio,
   image,
   specialties,
-  backgroundVariant,
   className,
 }: TeamMemberCardProps) {
+  const backgroundClass =
+    backgroundClasses[
+      name.length % backgroundClasses.length
+    ];
+
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-[0_18px_45px_rgba(92,58,11,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/45 hover:shadow-[0_28px_60px_rgba(92,58,11,0.14)]",
+        "group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-[0_18px_45px_rgba(196,30,58,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/45 hover:shadow-[0_28px_60px_rgba(196,30,58,0.14)]",
         className
       )}
     >
       <div
         className={cn(
           "relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:aspect-[4/5]",
-          backgroundClassMap[backgroundVariant]
+          backgroundClass
         )}
       >
         <Image
@@ -47,8 +49,8 @@ export function TeamMemberCard({
           className="relative z-[1] object-contain object-top p-4 transition-transform duration-500 group-hover:scale-[1.02] sm:p-5 lg:p-6"
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />
-        <div className="absolute inset-x-0 bottom-0 z-[2] border-t border-accent/20 bg-[linear-gradient(180deg,transparent,rgba(8,7,6,0.92))] px-5 pb-5 pt-10">
-          <p className="text-[0.65rem] font-medium uppercase tracking-[0.28em] text-accent/85">
+        <div className="absolute inset-x-0 bottom-0 z-[2] border-t border-white/20 bg-[linear-gradient(180deg,transparent,rgba(69,10,10,0.92))] px-5 pb-5 pt-10">
+          <p className="text-[0.65rem] font-medium uppercase tracking-[0.28em] text-white/85">
             Leadership
           </p>
           <h3 className="mt-2 font-serif text-xl font-semibold text-white sm:text-2xl">

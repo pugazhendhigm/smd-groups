@@ -41,7 +41,7 @@ export default function ServicesPage() {
                 <StaggerItem key={service.id}>
                   <Link
                     href={`/services/${service.id}`}
-                    className="group flex h-full flex-col luxury-card p-5 transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(92,58,11,0.14)] sm:p-6 md:p-8"
+                    className="group flex h-full flex-col luxury-card p-5 transition-all hover:border-accent/60 hover:shadow-[0_24px_55px_rgba(196,30,58,0.14)] sm:p-6 md:p-8"
                   >
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 transition-colors group-hover:bg-accent/20">
                       <Icon className="h-7 w-7 text-accent" />
@@ -126,14 +126,14 @@ export default function ServicesPage() {
               <div className="mt-6 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
                 <Link
                   href="/client-intake"
-                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-black shadow-[0_16px_30px_rgba(212,160,41,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/40 bg-accent px-6 py-3 font-medium text-white shadow-[0_16px_30px_rgba(196,30,58,0.25)] transition-colors hover:bg-accent/90 sm:w-auto"
                 >
                   Schedule Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex w-full items-center justify-center rounded-lg border border-accent/30 bg-transparent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/10 hover:text-accent sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-lg border border-white/30 bg-transparent px-6 py-3 font-medium text-white transition-colors hover:bg-white/10 hover:text-white sm:w-auto"
                 >
                   Contact Us
                 </Link>

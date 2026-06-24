@@ -13,7 +13,7 @@ export function LocationMap({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[2rem] border border-accent/15 bg-[#15120e]",
+        "overflow-hidden rounded-2xl border border-border bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)]",
         className
       )}
     >
@@ -26,7 +26,7 @@ export function LocationMap({
         allowFullScreen
       />
       {showDirectionsLink && (
-        <div className="border-t border-accent/15 bg-[#12100d] px-4 py-3 text-center">
+        <div className="border-t border-border bg-secondary/40 px-4 py-3 text-center">
           <a
             href={mapDirectionsUrl}
             target="_blank"

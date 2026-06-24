@@ -67,7 +67,7 @@ export function WhyChooseUsSection() {
               <div className="rounded-[1.75rem] border border-accent/12 bg-white/4 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.2)] backdrop-blur-sm">
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/12">
-                    <reason.icon className="h-5 w-5 text-accent" />
+                    <reason.icon className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">{reason.title}</h3>

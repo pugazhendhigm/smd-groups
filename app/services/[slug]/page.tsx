@@ -170,7 +170,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     )}
                     
                     <div className="relative luxury-card p-5 sm:p-6">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-bold text-black">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">
                         {step.step}
                       </div>
                       <h3 className="mt-4 font-semibold text-foreground">
@@ -237,7 +237,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="w-full border-accent/30 bg-transparent text-white hover:bg-accent/10 hover:text-accent sm:w-auto"
+                  className="w-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto"
                 >
                   <Link href="/contact">Contact Us</Link>
                 </Button>
