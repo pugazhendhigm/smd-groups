@@ -43,6 +43,9 @@ export const services = [
     shortDescription: "Strategic tax planning to minimize liabilities and maximize savings.",
     description: "Our tax advisory services provide comprehensive strategies to optimize your tax position. We work closely with businesses and individuals to develop proactive tax planning that aligns with your financial goals.",
     icon: "calculator",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Tax documents, calculator, and financial planning notes on a desk",
+    accent: "from-sky-500 to-cyan-400",
     benefits: [
       "Minimize tax liabilities legally",
       "Strategic year-round tax planning",
@@ -75,6 +78,9 @@ export const services = [
     shortDescription: "Accurate bookkeeping and financial reporting for informed decisions.",
     description: "Our accounting services ensure your financial records are accurate, timely, and compliant. From day-to-day bookkeeping to complex financial reporting, we provide the foundation for sound business decisions.",
     icon: "book-open",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Accounting workspace with spreadsheets, charts, and calculator",
+    accent: "from-emerald-500 to-teal-400",
     benefits: [
       "Real-time financial visibility",
       "Error-free bookkeeping",
@@ -107,6 +113,9 @@ export const services = [
     shortDescription: "Strategic growth planning to scale your business effectively.",
     description: "Transform your business with our development solutions. We help identify growth opportunities, optimize operations, and implement strategies that drive sustainable success.",
     icon: "trending-up",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Business leaders collaborating on growth strategy in a modern office",
+    accent: "from-indigo-500 to-violet-400",
     benefits: [
       "Identify new revenue streams",
       "Optimize operational efficiency",
@@ -139,6 +148,9 @@ export const services = [
     shortDescription: "Expert help resolving IRS issues and back taxes.",
     description: "Facing IRS problems? Our tax resolution specialists negotiate on your behalf to resolve tax debts, penalties, and compliance issues. We work to achieve the best possible outcome for your situation.",
     icon: "shield-check",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Financial paperwork reviewed carefully for tax resolution support",
+    accent: "from-rose-500 to-orange-400",
     benefits: [
       "IRS penalty abatement",
       "Installment agreement negotiation",
@@ -171,6 +183,9 @@ export const services = [
     shortDescription: "Executive-level financial leadership without the full-time cost.",
     description: "Access experienced CFO expertise on a fractional basis. Our CFO services provide strategic financial leadership, helping you make informed decisions and drive business growth.",
     icon: "briefcase",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Executive finance team reviewing company performance dashboards",
+    accent: "from-blue-500 to-slate-400",
     benefits: [
       "Strategic financial planning",
       "Cash flow optimization",
@@ -203,6 +218,9 @@ export const services = [
     shortDescription: "Premium, personalized financial services for high-net-worth clients.",
     description: "Our white glove service provides exclusive, hands-on financial management for discerning clients. Experience personalized attention and comprehensive wealth management tailored to your unique needs.",
     icon: "crown",
+    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Premium client service setting with elegant business details",
+    accent: "from-amber-400 to-yellow-300",
     benefits: [
       "Dedicated personal advisor",
       "24/7 priority support",
