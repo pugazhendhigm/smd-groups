@@ -39,9 +39,9 @@ export const navigationItems = [
     title: "Resources",
     href: "/resources",
     children: [
-      { title: "Tax Updates", href: "/resources/tax-updates" },
-      { title: "Business Insights", href: "/resources/business-insights" },
-      { title: "Financial Guides", href: "/resources/financial-guides" },
+      { title: "Tax Updates", href: "/resources?category=Tax%20Updates" },
+      { title: "Business Insights", href: "/resources?category=Business%20Insights" },
+      { title: "Financial Guides", href: "/resources?category=Financial%20Guides" },
     ],
   },
   // {
@@ -508,6 +508,44 @@ export const resourcePosts = [
     date: "2023-12-10",
     readTime: "6 min read",
     image: "/resources/estate-planning.jpg",
+  },
+];
+
+// Blog Data
+export const blogPosts = [
+  {
+    id: 1,
+    slug: "navigating-tax-laws-2024",
+    title: "Navigating the New Tax Laws in 2024",
+    excerpt: "Stay ahead of the curve with our comprehensive guide to the latest tax law changes and how they affect your business.",
+    content: `
+      <p>The tax landscape is constantly evolving, and 2024 brings several significant changes that business owners and individuals need to be aware of.</p>
+      <h2>Key Changes in 2024</h2>
+      <p>From updated bracket thresholds to new credits for sustainable energy investments, we break down everything you need to know to stay compliant and optimize your tax position.</p>
+    `,
+    category: "Tax Planning",
+    author: "Sarah Chen",
+    authorRole: "Managing Partner",
+    date: "2024-02-10",
+    readTime: "6 min read",
+    image: "/blog/tax-laws.jpg",
+  },
+  {
+    id: 2,
+    slug: "scaling-your-business-profitably",
+    title: "Scaling Your Business Profitably: A CFO's Perspective",
+    excerpt: "Growth is exciting, but scaling without a clear financial strategy can lead to disaster. Learn how to grow sustainably.",
+    content: `
+      <p>Scaling a business is more than just increasing revenue; it's about building a sustainable and profitable foundation for the future.</p>
+      <h2>Strategic Growth Pillars</h2>
+      <p>We explore the three critical pillars of profitable scaling: cash flow management, operational efficiency, and data-driven decision making.</p>
+    `,
+    category: "Business Development",
+    author: "Robert Kim",
+    authorRole: "CFO Services Lead",
+    date: "2024-01-25",
+    readTime: "8 min read",
+    image: "/blog/scaling-business.jpg",
   },
 ];
 
