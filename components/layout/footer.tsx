@@ -67,7 +67,7 @@ export function Footer() {
                   href="/client-intake"
                   className="text-sm text-white/66 transition-colors hover:text-white"
                 >
-                  Client Intake
+                  Client Portal
                 </Link>
               </li>
             </ul>

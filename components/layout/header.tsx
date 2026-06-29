@@ -64,7 +64,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex h-full items-center px-4 text-sm font-medium transition-colors xl:px-5",
+                      "flex h-full items-center px-3 text-sm font-medium transition-colors xl:px-4",
                       active
                         ? "text-accent"
                         : "text-foreground/75 group-hover:text-accent"
@@ -85,7 +85,7 @@ export function Header() {
 
                   <span
                     className={cn(
-                      "pointer-events-none absolute inset-x-4 bottom-0 h-0.5 rounded-full transition-opacity xl:inset-x-5",
+                      "pointer-events-none absolute inset-x-3 bottom-0 h-0.5 rounded-full transition-opacity xl:inset-x-4",
                       active
                         ? "bg-accent opacity-100"
                         : "bg-accent/70 opacity-0 group-hover:opacity-100"
@@ -127,7 +127,7 @@ export function Header() {
 
           <div className="hidden items-center self-center lg:flex">
             <Button asChild size="sm" className="h-10 px-5">
-              <Link href="/client-intake">Get Started</Link>
+              <Link href="/client-intake">Client Portal</Link>
             </Button>
           </div>
 
@@ -202,7 +202,7 @@ export function Header() {
                 </div>
               ))}
               <Button asChild className="mt-3 w-full">
-                <Link href="/client-intake">Get Started</Link>
+                <Link href="/client-intake">Client Portal</Link>
               </Button>
             </div>
           </motion.div>

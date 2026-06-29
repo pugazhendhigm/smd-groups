@@ -26,9 +26,28 @@ export const navigationItems = [
     ],
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Industries",
+    href: "/industries",
+    children: [
+      { title: "Real Estate", href: "/industries/real-estate" },
+      { title: "Professional Services", href: "/industries/professional-services" },
+      { title: "Healthcare", href: "/industries/healthcare" },
+      { title: "Technology", href: "/industries/technology" },
+    ],
   },
+  {
+    title: "Resources",
+    href: "/resources",
+    children: [
+      { title: "Tax Updates", href: "/resources/tax-updates" },
+      { title: "Business Insights", href: "/resources/business-insights" },
+      { title: "Financial Guides", href: "/resources/financial-guides" },
+    ],
+  },
+  // {
+  //   title: "Client Portal",
+  //   href: "/client-intake",
+  // },
   {
     title: "Contact Us",
     href: "/contact",
@@ -292,8 +311,8 @@ export const teamMembers = [
   },
 ];
 
-// Blog Data
-export const blogPosts = [
+// Resources Data
+export const resourcePosts = [
   {
     id: 1,
     slug: "tax-planning-strategies-2024",
@@ -320,12 +339,12 @@ export const blogPosts = [
       
       <p>Contact our team to develop a personalized tax planning strategy that aligns with your financial goals.</p>
     `,
-    category: "Tax Planning",
+    category: "Tax Updates",
     author: "Sarah Chen",
     authorRole: "Managing Partner, Tax Advisory",
     date: "2024-01-15",
     readTime: "5 min read",
-    image: "/blog/tax-planning.jpg",
+    image: "/resources/tax-planning.jpg",
   },
   {
     id: 2,
@@ -353,12 +372,12 @@ export const blogPosts = [
       
       <p>Our accounting team can help you implement these best practices and more. Contact us for a consultation.</p>
     `,
-    category: "Accounting",
+    category: "Business Insights",
     author: "David Thompson",
     authorRole: "Director of Accounting Services",
     date: "2024-01-08",
     readTime: "4 min read",
-    image: "/blog/accounting.jpg",
+    image: "/resources/accounting.jpg",
   },
   {
     id: 3,
@@ -386,12 +405,12 @@ export const blogPosts = [
       
       <p>If you are facing an IRS audit, contact our tax resolution team for expert assistance.</p>
     `,
-    category: "Tax Resolution",
+    category: "Tax Updates",
     author: "Jennifer Martinez",
     authorRole: "Senior Tax Resolution Specialist",
     date: "2024-01-02",
     readTime: "6 min read",
-    image: "/blog/irs-audit.jpg",
+    image: "/resources/irs-audit.jpg",
   },
   {
     id: 4,
@@ -417,12 +436,12 @@ export const blogPosts = [
       
       <p>Our CFO services team can help determine if fractional CFO support is right for your business.</p>
     `,
-    category: "CFO Services",
+    category: "Business Insights",
     author: "Robert Kim",
     authorRole: "CFO Services Practice Lead",
     date: "2023-12-20",
     readTime: "5 min read",
-    image: "/blog/cfo-services.jpg",
+    image: "/resources/cfo-services.jpg",
   },
   {
     id: 5,
@@ -450,12 +469,12 @@ export const blogPosts = [
       
       <p>Our business development team can help you create and execute a growth strategy tailored to your goals.</p>
     `,
-    category: "Business Development",
+    category: "Financial Guides",
     author: "Amanda Foster",
     authorRole: "Business Development Director",
     date: "2023-12-15",
     readTime: "4 min read",
-    image: "/blog/business-growth.jpg",
+    image: "/resources/business-growth.jpg",
   },
   {
     id: 6,
@@ -483,12 +502,12 @@ export const blogPosts = [
       
       <p>Our white glove services team specializes in comprehensive estate planning for high-net-worth clients.</p>
     `,
-    category: "White Glove Services",
+    category: "Financial Guides",
     author: "Michael Richardson",
     authorRole: "Founder & CEO",
     date: "2023-12-10",
     readTime: "6 min read",
-    image: "/blog/estate-planning.jpg",
+    image: "/resources/estate-planning.jpg",
   },
 ];
 
@@ -528,6 +547,182 @@ export const contactInfo = {
   email: "info@smdgroup.com",
   hours: "Monday - Friday: 9:00 AM - 6:00 PM EST",
 };
+
+// Industries Data
+export const industries = [
+  {
+    id: "real-estate",
+    slug: "real-estate",
+    title: "Real Estate",
+    shortDescription: "Tax and accounting solutions for property developers, investors, and management firms.",
+    description: "The real estate industry faces a unique set of financial challenges and opportunities. From complex tax regulations like 1031 exchanges to fluctuating market conditions, success requires specialized financial expertise.",
+    icon: "home",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Modern luxury high-rise buildings and commercial real estate at sunset",
+    accent: "from-amber-600 to-orange-500",
+    content: `
+      <p>The real estate industry faces a unique set of financial challenges and opportunities. From complex tax regulations to fluctuating market conditions, success requires specialized financial expertise.</p>
+      <h2>Specialized Real Estate Solutions</h2>
+      <p>Our team provides comprehensive tax and accounting services designed specifically for the real estate sector. We help you navigate complex transactions, maximize deductions, and optimize your portfolio's performance.</p>
+      <p>Whether you are a commercial developer, a residential investor, or a property management firm, we provide the insights you need to make informed decisions and build lasting wealth.</p>
+      <h3>Maximizing Returns Through Strategic Planning</h3>
+      <p>We focus on long-term value creation. Our experts assist with everything from initial acquisition analysis to final disposition, ensuring that every step of the real estate lifecycle is tax-optimized and financially sound.</p>
+    `,
+    benefits: [
+      "1031 Exchange Planning",
+      "Cost Segregation Studies",
+      "Passive Loss Limitation Strategies",
+      "Property Tax Review & Appeal Support",
+      "Entity Structure Optimization",
+    ],
+    features: [
+      "Development project accounting",
+      "Lease analysis and CAM reconciliations",
+      "Waterfall distribution modeling",
+      "Qualified Opportunity Zone consulting",
+      "Foreign investment (FIRPTA) compliance",
+    ],
+    faqs: [
+      {
+        question: "How can a cost segregation study benefit my property?",
+        answer: "A cost segregation study allows you to accelerate depreciation deductions on certain components of your property, significantly reducing your current tax liability and improving cash flow.",
+      },
+      {
+        question: "What is a 1031 exchange, and why is it important?",
+        answer: "A 1031 exchange allows you to defer capital gains taxes when you sell an investment property and reinvest the proceeds into a 'like-kind' property, allowing your investment to grow tax-deferred.",
+      },
+      {
+        question: "Do you help with property management accounting?",
+        answer: "Yes, we provide specialized accounting support for property management firms, including trust account reconciliation and complex lease administration.",
+      },
+    ],
+  },
+  {
+    id: "healthcare",
+    slug: "healthcare",
+    title: "Healthcare",
+    shortDescription: "Comprehensive financial advisory for medical practices, dental clinics, and healthcare providers.",
+    description: "Healthcare providers operate in one of the most regulated and complex financial environments. Balancing patient care with practice profitability requires a partner who understands medical industry nuances.",
+    icon: "stethoscope",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Clean, modern medical facility interior with advanced equipment",
+    accent: "from-blue-600 to-cyan-500",
+    content: `
+      <p>Healthcare providers operate in one of the most regulated and complex financial environments. Balancing patient care with practice profitability requires a partner who understands the nuances of the medical industry.</p>
+      <h2>Financial Health for Your Practice</h2>
+      <p>We provide medical and dental practices with the executive-level financial leadership they need to thrive. From revenue cycle management to practice valuation and succession planning, we cover every aspect of your financial health.</p>
+      <p>Our goal is to handle the financial complexities so you can focus on what matters most: your patients. We understand the unique pressures of the healthcare sector and provide tailored solutions to improve your bottom line.</p>
+    `,
+    benefits: [
+      "Revenue Cycle Optimization",
+      "Practice Valuation & Transition",
+      "Provider Compensation Modeling",
+      "Regulatory Compliance Support",
+      "Tax-Efficient Equipment Financing",
+    ],
+    features: [
+      "Medical billing analysis",
+      "Benchmarking against industry standards",
+      "Buy-in/Buy-out agreement structuring",
+      "Retirement plan design for physicians",
+      "Overhead reduction strategies",
+    ],
+    faqs: [
+      {
+        question: "How do you help with practice profitability?",
+        answer: "We analyze your revenue cycle, identify billing inefficiencies, and benchmark your practice's expenses against industry standards to find opportunities for growth and savings.",
+      },
+      {
+        question: "Can you assist with physician compensation models?",
+        answer: "Yes, we design equitable and performance-based compensation models that align provider incentives with practice goals.",
+      },
+    ],
+  },
+  {
+    id: "professional-services",
+    slug: "professional-services",
+    title: "Professional Services",
+    shortDescription: "Specialized financial management for law firms, consultants, and creative agencies.",
+    description: "For professional service firms, your people are your greatest asset. Managing the financial health of a service-based business requires a focus on utilization, realization, and strategic growth.",
+    icon: "briefcase",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Modern, professional office environment with collaborative spaces",
+    accent: "from-indigo-600 to-purple-500",
+    content: `
+      <p>For professional service firms, your people are your greatest asset. Managing the financial health of a service-based business requires a focus on utilization, realization, and strategic growth.</p>
+      <h2>Executive Financial Leadership</h2>
+      <p>We work with law firms, engineering firms, architectural practices, and creative agencies to improve their financial performance. Our fractional CFO services provide the strategic guidance needed to scale your firm profitably.</p>
+      <h3>Optimizing Service Delivery</h3>
+      <p>We help you understand the true cost of your services and identify where you are losing margin. By optimizing your billing processes and project management, we help you capture more value from every hour worked.</p>
+    `,
+    benefits: [
+      "Utilization & Realization Analysis",
+      "Strategic Partner Compensation",
+      "Work-in-Process (WIP) Management",
+      "Merger & Acquisition Support",
+      "Cash Flow Forecasting",
+    ],
+    features: [
+      "Time-tracking system optimization",
+      "Project-based profitability analysis",
+      "Tax planning for service corporations",
+      "Internal control implementation",
+      "Succession and transition planning",
+    ],
+    faqs: [
+      {
+        question: "How do you help law firms manage their finances?",
+        answer: "We focus on trust accounting compliance, partner compensation structures, and improving realization rates to ensure the firm's long-term financial stability.",
+      },
+      {
+        question: "What is realization analysis?",
+        answer: "Realization analysis measures the difference between the value of time recorded and the amount actually collected. We help you identify and close the gaps in this process.",
+      },
+    ],
+  },
+  {
+    id: "technology",
+    slug: "technology",
+    title: "Technology",
+    shortDescription: "Strategic financial support for startups, SaaS companies, and tech enterprises.",
+    description: "The tech sector moves fast. Startups and established firms need financial partners who can keep pace with rapid innovation, R&D tax credits, and complex funding structures.",
+    icon: "cpu",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Advanced circuit board and technology components with glowing connections",
+    accent: "from-emerald-600 to-teal-500",
+    content: `
+      <p>The technology sector moves fast. Startups and established tech firms alike need financial partners who can keep pace with rapid innovation and complex funding structures.</p>
+      <h2>Scaling Your Tech Vision</h2>
+      <p>From R&D tax credits to equity-based compensation and revenue recognition (ASC 606), we provide the specialized knowledge that tech companies require to scale and attract investment.</p>
+      <h3>Strategic Growth for SaaS and Beyond</h3>
+      <p>We help you master the metrics that matter, from CAC and LTV to churn and MRR. Our financial models provide the clarity you need to navigate fundraising rounds and international expansion.</p>
+    `,
+    benefits: [
+      "R&D Tax Credit Optimization",
+      "SaaS Metric Analysis (CAC, LTV, Churn)",
+      "Equity Compensation Structuring",
+      "ASC 606 Revenue Recognition",
+      "Audit Readiness for VC/PE Funding",
+    ],
+    features: [
+      "Multi-state sales tax (Nexus) compliance",
+      "Cap table management support",
+      "Financial modeling for fundraising",
+      "International expansion strategy",
+      "Cybersecurity risk assessment coordination",
+    ],
+    faqs: [
+      {
+        question: "What R&D tax credits are available for my tech company?",
+        answer: "Many tech companies qualify for federal and state R&D tax credits for their software development efforts. We help identify qualifying activities and maximize your credit amount.",
+      },
+      {
+        question: "How do you assist with fundraising?",
+        answer: "We create robust financial models and projections that demonstrate your company's value to potential investors and ensure you are prepared for due diligence.",
+      },
+    ],
+  },
+];
 
 export const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(contactInfo.mapLocation)}&z=16&output=embed`;
 
