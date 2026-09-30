@@ -698,7 +698,7 @@ export const companyStats = [
 // Contact Info
 export const contactInfo = {
   address: "1050 Crown Pointe Parkway, Suite 500, Atlanta, GA 30338, USA",
-  mapLocation: "1050 Crown Pointe Parkway, Suite 500, Atlanta, GA 30338, USA",
+  mapLocation: "WMJ3+MR Atlanta, Georgia, USA",
   phone: "404-504-7056",
   fax: "404-891-6045",
   email: "info@smdgrp.com",
