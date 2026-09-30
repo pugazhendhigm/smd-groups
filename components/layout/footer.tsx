@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Linkedin, Instagram, Star, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Star, Mail, Phone, MapPin, Printer } from "lucide-react";
 import { navigationItems, services, contactInfo, socialLinks } from "@/lib/data";
 import appLogo from "@/assets/appimg.png";
 
@@ -101,13 +101,17 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <Phone className="h-5 w-5 shrink-0 text-white/80" />
+                <Printer className="h-5 w-5 shrink-0 text-white/80" />
                 <a
-                  href={`tel:${contactInfo.phone}`}
+                  href={`tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`}
                   className="text-sm text-white/66 transition-colors hover:text-white"
                 >
-                  {contactInfo.phone}
+                  {contactInfo.fax}
                 </a>
+              </li>
+              <li className="flex gap-3">
+                <Phone className="h-5 w-5 shrink-0 text-white/80" />
+                <span className="text-sm text-white/66">{contactInfo.phone}</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-white/80" />

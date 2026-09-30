@@ -70,7 +70,7 @@ export function HeroSection() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
                 </span>
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent sm:text-xs">
-                  Trusted Advisor Since 1998
+                  Trusted Financial Advisor
                 </span>
               </div>
             </FadeIn>
@@ -83,7 +83,7 @@ export function HeroSection() {
 
             <FadeIn delay={0.14}>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                SMD Financial Group provides proactive tax planning, accounting, CFO advisory, and business solutions designed to help you make smarter financial decisions
+                SMD Financial Group provides proactive tax planning, accounting, CFO advisory, and business solutions designed to help you make smarter financial decisions. Executive Coaching.
               </p>
             </FadeIn>
 

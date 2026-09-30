@@ -114,6 +114,36 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
+      {/* Detailed service information */}
+      <section className="border-t border-border bg-background py-14 sm:py-20">
+        <div className="container mx-auto max-w-5xl space-y-12 px-4 sm:px-6 lg:px-8">
+          {service.detailSections.map((section) => (
+            <FadeIn key={section.heading}>
+              <div className="space-y-4">
+                <h2 className="font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  {section.heading}
+                </h2>
+                {section.paragraphs?.map((paragraph) => (
+                  <p key={paragraph} className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                    {paragraph}
+                  </p>
+                ))}
+                {section.items && (
+                  <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
       {/* Features & Benefits Modern Layout */}
       <section className="border-t border-border bg-muted/30 py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

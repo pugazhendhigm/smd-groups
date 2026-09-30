@@ -18,7 +18,13 @@ const contactItems = [
     icon: Phone,
     label: "Phone",
     value: contactInfo.phone,
-    href: `tel:${contactInfo.phone}`,
+    href: `tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+  },
+  {
+    icon: Phone,
+    label: "Fax",
+    value: contactInfo.fax,
+    href: undefined,
   },
   {
     icon: Mail,
@@ -70,7 +76,7 @@ export function ContactSection() {
                         <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                           {item.label}
                         </p>
-                        <p className="mt-1 text-sm leading-relaxed text-foreground">
+                        <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-foreground">
                           {item.value}
                         </p>
                       </div>

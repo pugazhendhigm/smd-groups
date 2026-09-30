@@ -16,7 +16,7 @@ export default function WhoWeArePage() {
     <>
       <PageHeader
         title="Who We Are"
-        description="Your trusted partner in financial excellence since 1998"
+        description="Your trusted partner in financial excellence"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About", href: "/about" },
@@ -44,7 +44,7 @@ export default function WhoWeArePage() {
               <FadeIn delay={0.2}>
                 <div className="mt-6 space-y-4 text-muted-foreground">
                   <p className="leading-relaxed">
-                    Founded in 1998, SMD Group began with a simple mission: to provide
+                    SMD Group began with a simple mission: to provide
                     exceptional financial advisory services that truly make a difference
                     in our clients&apos; lives. What started as a small tax practice has
                     grown into a comprehensive financial services firm serving clients

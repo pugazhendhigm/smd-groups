@@ -107,6 +107,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
+                  timeZone: "UTC",
                 })}
               </span>
             </div>

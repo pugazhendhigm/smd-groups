@@ -130,7 +130,8 @@ export default function PrivacyPolicyPage() {
                     <p>If you have questions or concerns about this Privacy Policy, contact us at:</p>
                     <p>Email: info@smdgrp.com</p>
                     <p>Phone: 404-504-7056</p>
-                    <p>Address: 1050 Crown Pointe Pkwy STE 500, Atlanta, GA 30338</p>
+                    <p>Fax: 404-891-6045</p>
+                    <p>Address: 1050 Crown Pointe Parkway, Suite 500, Atlanta, GA 30338, USA</p>
                   </div>
                 </div>
               </div>

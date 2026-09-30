@@ -17,7 +17,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
-  description: "Specialized financial expertise for real estate, healthcare, technology, and professional services.",
+  description: "Specialized financial expertise for healthcare, manufacturing, nonprofits, professional services, real estate, retail, technology, and more.",
 };
 
 const iconMap: Record<string, any> = {
@@ -31,7 +31,7 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHeader
-        title="Industries We Serve"
+        title="Industries"
         description="Specialized financial expertise tailored to the unique challenges of your industry"
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -86,7 +86,7 @@ export default function IndustriesPage() {
 
           {/* Industry Grid */}
           <StaggerContainer className="mt-20 grid gap-6 sm:grid-cols-2 lg:gap-10">
-            {industries.map((industry) => {
+            {[...industries].sort((a, b) => a.title.localeCompare(b.title)).map((industry) => {
               const Icon = iconMap[industry.icon] || Briefcase;
               return (
                 <StaggerItem key={industry.id}>

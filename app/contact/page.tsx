@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Printer } from "lucide-react";
 import { contactInfo } from "@/lib/data";
 import { PageHeader } from "@/components/shared/page-header";
 import { LocationMap } from "@/components/shared/location-map";
@@ -16,7 +16,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         title="Contact Us"
-        description="We are here to help with all your financial advisory needs"
+        description="We’d love to hear from you! Reach out to SMD Financial Group to discuss how we can support your financial and business goals."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact Us", href: "/contact" },
@@ -43,9 +43,7 @@ export default function ContactPage() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="mt-4 text-muted-foreground">
-                  Have questions about our services? Want to discuss your financial
-                  needs? We are here to help. Reach out to us and our team will
-                  respond within 24 hours.
+                  We’d love to hear from you! Reach out to SMD Financial Group to discuss how we can support your financial and business goals.
                 </p>
               </FadeIn>
 
@@ -70,11 +68,21 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
                       <a
-                        href={`tel:${contactInfo.phone}`}
+                        href={`tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`}
                         className="mt-1 block text-muted-foreground hover:text-foreground"
                       >
                         {contactInfo.phone}
                       </a>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-card">
+                      <Printer className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">Fax</p>
+                      <p className="mt-1 text-muted-foreground">{contactInfo.fax}</p>
                     </div>
                   </div>
 
@@ -100,7 +108,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-foreground">Business Hours</p>
                       <p className="mt-1 text-muted-foreground">
-                        {contactInfo.hours}
+                        <span className="whitespace-pre-line">{contactInfo.hours}</span>
                       </p>
                     </div>
                   </div>
@@ -121,6 +129,12 @@ export default function ContactPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      <section className="pb-12">
+        <div className="container-page text-center text-muted-foreground">
+          <p><strong className="text-foreground">Ready to get started?</strong> Contact us today to schedule a consultation or learn more about our services.</p>
         </div>
       </section>
 

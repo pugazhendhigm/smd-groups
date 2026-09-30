@@ -93,6 +93,7 @@ export default async function ResourcesPage({ searchParams }: ResourcesPageProps
                           {new Date(post.date).toLocaleDateString("en-US", {
                             month: "short",
                             day: "numeric",
+                            timeZone: "UTC",
                           })}
                         </span>
                       </div>
