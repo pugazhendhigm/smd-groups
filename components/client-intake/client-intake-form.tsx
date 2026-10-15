@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/data";
+import { createClientIntakeEmail } from "@/lib/client-intake-email";
 import { cn } from "@/lib/utils";
 
 const steps = [
@@ -98,11 +99,16 @@ const initialFormData: FormData = {
   files: [],
 };
 
+const EMAILJS_SERVICE_ID = "service_ydwvvqp";
+const EMAILJS_TEMPLATE_ID = "template_c2apzuh";
+const EMAILJS_PUBLIC_KEY = "TKcmcn8phStYrfbmo";
+
 export function ClientIntakeForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const updateField = (field: keyof FormData, value: string | string[] | File[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -134,9 +140,64 @@ export function ClientIntakeForm() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError("");
+    try {
+      const { subject, body } = createClientIntakeEmail(formData);
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phone: formData.phone || "Not provided",
+            address: formData.address || "Not provided",
+            city: formData.city || "Not provided",
+            state: formData.state || "Not provided",
+            zip: formData.zip || "Not provided",
+            businessName: formData.businessName || "Not provided",
+            businessType: formData.businessType || "Not provided",
+            industry: formData.industry || "Not provided",
+            yearsInBusiness: formData.yearsInBusiness || "Not provided",
+            annualRevenue: formData.annualRevenue || "Not provided",
+            employeeCount: formData.employeeCount || "Not provided",
+            ein: formData.ein || "Not provided",
+            servicesNeeded: formData.servicesNeeded
+              .map((id) => services.find((service) => service.id === id)?.title ?? id)
+              .join(", ") || "Not provided",
+            urgency: formData.urgency || "Not provided",
+            budget: formData.budget || "Not provided",
+            filingStatus: formData.filingStatus || "Not provided",
+            lastYearFiled: formData.lastYearFiled || "Not provided",
+            hasBackTaxes: formData.hasBackTaxes || "Not provided",
+            estimatedTaxDebt: formData.estimatedTaxDebt || "Not provided",
+            currentSoftware: formData.currentSoftware || "Not provided",
+            bookkeepingMethod: formData.bookkeepingMethod || "Not provided",
+            needsPayroll: formData.needsPayroll || "Not provided",
+            referralSource: formData.referralSource || "Not provided",
+            additionalNotes: formData.additionalNotes || "Not provided",
+            fileNames: formData.files.map((file) => file.name).join(", ") || "No files selected",
+            subject,
+            reply_to: formData.email,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const details = await response.text();
+        throw new Error(details || "EmailJS could not send the message.");
+      }
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Client intake email failed:", error);
+      setSubmitError("We couldn't send your intake form. Please try again in a moment.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceed = () => {
@@ -160,8 +221,8 @@ export function ClientIntakeForm() {
           Thank You for Your Submission!
         </h2>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-          We have received your information and a member of our team will contact
-          you within 1-2 business days to discuss your needs.
+          We received your intake form. A member of our team will contact you
+          within 1–2 business days.
         </p>
         <Button
           className="mt-8"
@@ -310,6 +371,11 @@ export function ClientIntakeForm() {
           </Button>
         )}
       </div>
+      {submitError && (
+        <p role="alert" className="px-4 pb-4 text-sm text-destructive sm:px-6">
+          {submitError}
+        </p>
+      )}
     </div>
   );
 }
